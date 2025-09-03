@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwndcss/browser@4"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="assets/js/idioma.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
@@ -18,7 +18,77 @@
     <title>ILC</title>
 </head>
 
-<body>
+<body class ="font-[epilogue] text-[#f0f0f2]">
+
+    <header class ="w-full p-10 min-h-20 flex items-center justify-between absolute md:text-xl">
+
+        <nav class ="flex gap-20">
+
+            <a href="index.html">Logo</a>
+
+            <ul class ="flex gap-10 max-sm:hidden">
+
+                <li class ="cursor-pointer" id ="item1">Item 1</li>
+                <li class ="cursor-pointer" id ="item2">Item 2</li>
+                <li class ="cursor-pointer" id ="item3">Item 3</li>
+                <li class ="cursor-pointer" id ="item4">Item 4</li>
+                
+            </ul>
+
+        </nav>
+        
+        <div class ="flex gap-5 items-center justify-center max-sm:hidden md:text-xl">
+            
+            <!-- Troca de idioma -->
+            <img src="img/BR-icon.png" alt="pt-br" class ="max-w-10 cursor-pointer" id ="br">
+
+            <img src="img/USA-icon.png" alt="en" class ="max-w-10 cursor-pointer hidden" id ="en">
+
+            <button class ="p-3 md:p-4 rounded-xl hover:bg-black/30 cursor-pointer" id ="entrar">
+
+                Entrar
+
+            </button>
+            
+            <button class ="bg-black/30 p-3 md:p-4 rounded-xl hover:bg-black/10 cursor-pointer" id ="criarConta">
+
+                Criar conta
+
+            </button>
+
+        </div>
+
+        <div class ="md:hidden">
+
+            <img src="img/icon-menu.svg">
+
+        </div>
+
+    </header>
+
+    <main class ="">
+
+        <!-- landing page -->
+        <section class ="w-full h-screen bg-[url('img/landingPage.jpeg')] bg-cover bg-center flex justify-center items-center">
+
+            <!-- container -->
+            <div class ="flex flex-col justify-center items-center">
+
+                <h1 class ="text-7xl md:text-9xl">ILC</h1>
+
+                <p class ="text-center p-4 text-xl md:text-3xl" id ="landingPageP">Intercâmbio, Linguagem e Cultura</p>
+
+                <button class ="mt-4 py-3 px-5 bg-black/70 text-[#f0f0f2] rounded-xl md:text-xl cursor-pointer hover:bg-black" id ="acessar">
+
+                    Acessar
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
 
 </body>
 
