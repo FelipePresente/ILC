@@ -7,6 +7,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const item2 = document.getElementById("item2")
     const item3 = document.getElementById("item3")
     const item4 = document.getElementById("item4")
+    const africaDoSulH4 = document.getElementById("africaDoSulH4")
+    const africaDoSulP = document.getElementById("africaDoSulP")
+    const mexicoH4 = document.getElementById("mexicoH4")
+    const mexicoP = document.getElementById("mexicoP")
+    const inglaterraH4 = document.getElementById("inglaterraH4")
+    const inglaterraP = document.getElementById("inglaterraP")
     const landingPageP = document.getElementById("landingPageP")
     const entrar = document.getElementById("entrar")
     const criarConta = document.getElementById("criarConta")
@@ -21,7 +27,16 @@ document.addEventListener("DOMContentLoaded", function() {
         entrar.innerText = "Login"
         criarConta.innerText ="Sign up"
         acessar.innerText = "Acess"
-
+        item1.innerText = "About us"
+        item2.innerText = "Our programs"
+        item3.innerText = "Exchanges"
+        item4.innerText = "Contact"
+        africaDoSulH4.innerText = "South Africa"
+        africaDoSulP.innerText = "Learn from african daily life"
+        mexicoH4.innerText = "Mexico"
+        mexicoP.innerText = "Study Spanish and enrich yourself culturally"
+        inglaterraH4.innerText = "England"
+        inglaterraP.innerText = "Improve your English with native speakers"
     }
 
     en.onclick = function() {
@@ -33,10 +48,16 @@ document.addEventListener("DOMContentLoaded", function() {
         entrar.innerText = "Entrar"
         criarConta.innerText ="Crear cuenta"
         acessar.innerText = "Acesso"
-        item1.innerText = "Artículo 1"
-        item2.innerText = "Artículo 2"
-        item3.innerText = "Artículo 3"
-        item4.innerText = "Artículo 4"
+        item1.innerText = "Sobre nosotros"
+        item2.innerText = "Nuestros programas"
+        item3.innerText = "Intercambios"
+        item4.innerText = "Contacto"
+        africaDoSulH4.innerText = "Sudáfrica"
+        africaDoSulP.innerText = "Aprenda de la vida cotidiana africana"
+        mexicoH4.innerText = "México"
+        mexicoP.innerText = "Estudia español y enriquécete culturalmente"
+        inglaterraH4.innerText = "Inglaterra"
+        inglaterraP.innerText = "Mejora tu inglés con hablantes nativos"
 
     }
 
@@ -50,10 +71,16 @@ document.addEventListener("DOMContentLoaded", function() {
         entrar.innerText = "Entrar"
         criarConta.innerText ="Criar conta"
         acessar.innerText = "Acessar"
-        item1.innerText = "Item 1"
-        item2.innerText = "Item 2"
-        item3.innerText = "Item 3"
-        item4.innerText = "Item 4"
+        item1.innerText = "Sobre nós"
+        item2.innerText = "Nossos programas"
+        item3.innerText = "Intercâmbios"
+        item4.innerText = "Contato"
+        africaDoSulH4.innerText = "África do Sul"
+        africaDoSulP.innerText = "Aprenda com o cotidiano africano"
+        mexicoH4.innerText = "México"
+        mexicoP.innerText = "Estude espanhol e enriqueça-se culturalmente"
+        inglaterraH4.innerText = "Inglaterra"
+        inglaterraP.innerText = "Aprimore seu inglês com nativos"
 
     }
     
