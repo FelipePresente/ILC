@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const item2 = document.getElementById("item2")
     const item3 = document.getElementById("item3")
     const item4 = document.getElementById("item4")
+    const intercambios = document.getElementById("intercambios")
     const africaDoSulH4 = document.getElementById("africaDoSulH4")
     const africaDoSulP = document.getElementById("africaDoSulP")
     const mexicoH4 = document.getElementById("mexicoH4")
@@ -29,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
         acessar.innerText = "Acess"
         item1.innerText = "About us"
         item2.innerText = "Our programs"
-        item3.innerText = "Exchanges"
+        intercambios.innerText = "Exchanges"
         item4.innerText = "Contact"
         africaDoSulH4.innerText = "South Africa"
         africaDoSulP.innerText = "Learn from african daily life"
@@ -50,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
         acessar.innerText = "Acesso"
         item1.innerText = "Sobre nosotros"
         item2.innerText = "Nuestros programas"
-        item3.innerText = "Intercambios"
+        intercambios.innerText = "Intercambios"
         item4.innerText = "Contacto"
         africaDoSulH4.innerText = "Sudáfrica"
         africaDoSulP.innerText = "Aprenda de la vida cotidiana africana"
@@ -73,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
         acessar.innerText = "Acessar"
         item1.innerText = "Sobre nós"
         item2.innerText = "Nossos programas"
-        item3.innerText = "Intercâmbios"
+        intercambios.innerText = "Intercâmbios"
         item4.innerText = "Contato"
         africaDoSulH4.innerText = "África do Sul"
         africaDoSulP.innerText = "Aprenda com o cotidiano africano"

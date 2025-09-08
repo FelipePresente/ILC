@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="assets/js/idioma.js"></script>
-    <script src ="assets/js/dropdown.js"></script>
+    <script src="assets/js/dropdown.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
@@ -35,11 +35,14 @@
 
 
 
-                <li class="cursor-pointer" id ="intercambios">
-                    <p class="hover:text-gray-300" id="item3">Intercâmbios</p>
+                <li class="cursor-pointer" id="item3">
+                    <p class="hover:text-gray-300 flex justify-center items-center gap-3"> <span
+                            id="intercambios">Intercâmbios</span> <img src="img/icon-arrow-down.svg"
+                            id="intercambiosdown"> <img src="img/icon-arrow-up.svg" class="hidden" id="intercambiosup">
+                    </p>
 
-                    <ul
-                        class="p-[5px] min-h-50 min-w-80 text-black bg-[#f0f0f2]/90 text-[15px] rounded-xl absolute mt-5 flex flex-col justify-between hidden" id ="intercambiosDropdown">
+                    <ul class="p-[5px] min-h-50 min-w-80 text-black bg-[#f0f0f2]/90 text-[15px] rounded-xl absolute mt-5 flex flex-col justify-between hidden"
+                        id="intercambiosDropdown">
 
                         <!-- África do Sul -->
                         <li class="p-5 rounded-xl hover:bg-black/10 flex gap-3">
@@ -50,8 +53,9 @@
 
                             <div>
 
-                                <h4 class="font-bold" id ="africaDoSulH4">África do Sul</h4>
-                                <p class="mt-2 text-gray-600 text-[13px]" id ="africaDoSulP">Aprenda com o cotidiano africano</p>
+                                <h4 class="font-bold" id="africaDoSulH4">África do Sul</h4>
+                                <p class="mt-2 text-gray-600 text-[13px]" id="africaDoSulP">Aprenda com o cotidiano
+                                    africano</p>
 
                             </div>
 
@@ -65,8 +69,9 @@
                             </div>
 
                             <div>
-                                <h4 class="font-bold" id ="mexicoH4">México</h4>
-                                <p class="mt-2 text-gray-600 text-[13px]" id ="mexicoP">Estude espanhol e enriqueça-se culturalmente
+                                <h4 class="font-bold" id="mexicoH4">México</h4>
+                                <p class="mt-2 text-gray-600 text-[13px]" id="mexicoP">Estude espanhol e enriqueça-se
+                                    culturalmente
                                 </p>
                             </div>
 
@@ -78,8 +83,9 @@
                             </div>
 
                             <div>
-                                <h4 class="font-bold" id ="inglaterraH4">Inglaterra</h4>
-                                <p class="mt-2 text-gray-600 text-[13px]" id ="inglaterraP">Aprimore seu inglês com nativos</p>
+                                <h4 class="font-bold" id="inglaterraH4">Inglaterra</h4>
+                                <p class="mt-2 text-gray-600 text-[13px]" id="inglaterraP">Aprimore seu inglês com
+                                    nativos</p>
                             </div>
 
                         </li>
