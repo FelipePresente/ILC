@@ -20,7 +20,7 @@
     <title>ILC</title>
 </head>
 
-<body class="font-[epilogue] text-[#f0f0f2]" id="home">
+<body class="font-[epilogue] text-white" id="home">
 
     <header class="w-full p-10 min-h-20 flex items-center justify-between absolute md:text-xl transition duration-500"
         id="header">
@@ -46,7 +46,7 @@
                         </span>
                     </p>
 
-                    <ul class="p-[5px] min-h-50 min-w-80 text-black bg-[#f0f0f2]/90 text-[15px] rounded-xl absolute mt-5 flex flex-col justify-between hidden"
+                    <ul class="p-[5px] min-h-50 min-w-80 text-black bg-white/90 text-[15px] rounded-xl absolute mt-5 flex flex-col justify-between hidden"
                         id="intercambiosDropdown">
 
                         <!-- África do Sul -->
@@ -154,30 +154,61 @@
 
     <!-- Menu de criar conta -->
     <div class="w-full h-screen bg-transparent fixed flex justify-center items-center">
-        <section class="bg-[#2d2638] min-w-420 min-h-220 rounded-2xl flex justify-between p-5">
+        <section class="bg-[#2d2638] min-w-400 min-h-220 rounded-2xl flex justify-between p-5">
 
-            <div class ="bg-[url(img/machuPichu.jpg)] min-h-full min-w-[50%] bg-center bg-cover rounded-xl">
-                
+            <div class="bg-[url(img/machuPichu.jpg)] min-h-full min-w-[50%] bg-center bg-cover rounded-xl py-6 px-6">
+
+                <nav class="flex justify-between items-center">
+                    <p class="text-5xl">ILC</p>
+
+                    <button
+                        class="gap-2 bg-[#e3e3e3]/20 py-2 px-4 rounded-full flex justify-between cursor-pointer hover:bg-[#e3e3e3]/30">Retornar
+                        à página <img src="img/arrow-forward.svg" class="max-w-4"></button>
+                </nav>
+
+                <section class="mt-145">
+                    <h2 class="text-center text-4xl max-w-100 mx-auto">Intercâmbio, Linguagem e Cultura</h2>
+
+                    <div class="flex justify-between max-w-27 mx-auto mt-10">
+
+                        <div class="min-w-8 min-h-1.5 rounded-full bg-[#b4b4b4]"></div>
+
+                        <div class="min-w-8 min-h-1.5 rounded-full bg-[#b4b4b4]"></div>
+
+                        <div class="min-w-8 min-h-1.5 rounded-full bg-[#b4b4b4]"></div>
+
+                    </div>
+                </section>
+
             </div>
 
-            <div class ="flex justify-center items-center min-w-[50%] min-h-full px-35 py-20">
-                <section class ="min-h-full min-w-full">
-                    <h2 class ="text-5xl">Criar uma conta</h2>
+            <div class="flex justify-center items-center min-w-[50%] min-h-full px-35 py-20">
+                <section class="min-h-full min-w-full">
+                    <h2 class="text-5xl">Criar uma conta</h2>
 
-                    <p class ="mt-7 text-gray-400">Já possui uma conta? <span class ="underline cursor-pointer text-[#f0f0f2]">Entrar</span></p>
+                    <p class="mt-7 text-gray-400">Já possui uma conta? <span
+                            class="underline cursor-pointer text-white">Entrar</span></p>
 
-                    <form class ="mt-10">
+                    <form class="mt-10">
                         <!-- Nome e sobrenome -->
-                        <div class ="min-w-full flex justify-between items-center gap-5">
+                        <div class="min-w-full flex justify-between items-center gap-5">
 
-                        <input type="text" class ="shadow-lg rounded-lg bg-[#483d5b] w-[50%] py-3 px-5" name="nome" id="nome" placeholder="Nome">
+                            <input type="text" class="shadow-lg rounded-lg bg-[#483d5b] w-[50%] py-3 px-5" name="nome"
+                                id="nome" placeholder="Nome">
 
-                        <input type="text" class ="shadow-lg rounded-lg bg-[#483d5b] w-[50%] py-3 px-5" name="sobrenome" id="sobrenome" placeholder="Sobrenome">
+                            <input type="text" class="shadow-lg rounded-lg bg-[#483d5b] w-[50%] py-3 px-5"
+                                name="sobrenome" id="sobrenome" placeholder="Sobrenome">
                         </div>
 
-                        <input type="email" class ="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 mt-5" id="email" placeholder="E-mail">
+                        <input type="email" class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 mt-5" id="email"
+                            placeholder="E-mail">
 
-                        <input type="password" class ="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 mt-5" name="password" id="password" placeholder="Digite sua senha">
+                        <div class ="flex items-center">
+                            <input type="password" class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 mt-5"
+                                name="password" id="password" placeholder="Digite sua senha">
+
+                                <img src="img/visibility.svg" class ="absolute">
+                        </div>
                     </form>
                 </section>
             </div>
@@ -214,7 +245,7 @@
 
                 <a href="#sec2">
                     <button
-                        class="mt-4 py-3 px-5 w-35 bg-black/70 text-[#f0f0f2] rounded-xl md:text-xl cursor-pointer hover:bg-black"
+                        class="mt-4 py-3 px-5 w-35 bg-black/70 text-white rounded-xl md:text-xl cursor-pointer hover:bg-black"
                         id="acessar">
 
                         Acessar
