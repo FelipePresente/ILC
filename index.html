@@ -8,6 +8,7 @@
     <script src="assets/js/idioma.js"></script>
     <script src="assets/js/dropdown.js"></script>
     <script src="assets/js/header.js"></script>
+    <script src="assets/js/criarConta.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
@@ -152,8 +153,13 @@
 
     </header>
 
+    <!-- Escurecimento de tela -->
+    <div class ="w-full h-screen absolute -z-10 transition" id ="blackscreen">
+
+    </div>
+
     <!-- Menu de criar conta -->
-    <div class="w-full h-screen bg-transparent fixed flex justify-center items-center">
+    <div class="z-40 w-full h-screen bg-transparent fixed flex justify-center items-center hidden" id ="criarContaMenu">
         <section class="bg-[#2d2638] min-w-400 min-h-220 rounded-2xl flex justify-between p-5">
 
             <div class="bg-[url(img/machuPichu.jpg)] min-h-full min-w-[50%] bg-center bg-cover rounded-xl py-6 px-6">
@@ -162,7 +168,7 @@
                     <p class="text-5xl">ILC</p>
 
                     <button
-                        class="gap-2 bg-[#e3e3e3]/20 py-2 px-4 rounded-full flex justify-between cursor-pointer hover:bg-[#e3e3e3]/30">Retornar
+                        class="gap-2 bg-[#e3e3e3]/20 py-2 px-4 rounded-full flex justify-between cursor-pointer hover:bg-[#e3e3e3]/30" id ="retornar">Retornar
                         à página <img src="img/arrow-forward.svg" class="max-w-4"></button>
                 </nav>
 
@@ -182,8 +188,8 @@
 
             </div>
 
-            <div class="flex justify-center items-center min-w-[50%] min-h-full px-35 py-20">
-                <section class="min-h-full min-w-full">
+            <div class ="flex justify-center items-center min-w-[50%] min-h-full px-35 py-20">
+                <section class="min-w-full">
                     <h2 class="text-5xl">Criar uma conta</h2>
 
                     <p class="mt-7 text-gray-400">Já possui uma conta? <span
@@ -209,6 +215,36 @@
 
                                 <img src="img/visibility.svg" class ="absolute">
                         </div>
+
+                        <!-- Termos -->
+                        <div class ="flex items-center gap-4 mt-5">
+                            <input type="checkbox" name="terms" id="terms">
+                            <label for="terms">Eu concordo com os <a href="" class ="text-purple-300 underline">Termos e Condições</a></label>
+                        </div>
+                        
+                        <button class ="mx-auto shadow-lg rounded-lg w-full py-3 px-5 mt-10 bg-[#675d99] text-lg hover:bg-[#7966d6] cursor-pointer">Criar conta</button>
+
+                        <div class ="inline-flex items-center justify-center w-full mt-10">
+                            <hr class ="w-full border-gray-400">
+                        <span class ="absolute bg-[#2d2638] p-5 text-[12px] text-gray-400">Ou registre-se com</span>
+                        </div>
+
+                        <div class ="flex items-center gap-5">
+
+                            <!-- Google -->
+                            <button class ="flex w-[50%] items-center justify-center gap-3 shadow-lg rounded-lg bg-transparent border py-3 px-5 mt-10 hover:bg-[#675d99]/20 cursor-pointer">
+                                <img class ="w-[20px]" src="img/google.png" alt="google">
+                                <p class="pt-1">Google</p>
+                            </button>
+
+                            <!-- Facebook -->
+                            <button class ="flex w-[50%] items-center justify-center gap-3 shadow-lg rounded-lg bg-transparent border py-3 px-5 mt-10 hover:bg-[#675d99]/20 cursor-pointerZ">
+                                <img class ="w-[20px]" src="img/facebook.png" alt="google">
+                                <p class ="pt-1">Facebook</p>
+                            </button>
+   
+                        </div>
+
                     </form>
                 </section>
             </div>
