@@ -154,15 +154,16 @@
     </header>
 
     <!-- Escurecimento de tela -->
-    <div class ="w-full h-screen absolute -z-10 transition" id ="blackscreen">
+    <div class ="w-full h-screen absolute -z-30 transition" id ="blackscreen">
 
     </div>
 
     <!-- Menu de criar conta -->
-    <div class="z-40 w-full h-screen bg-transparent fixed flex justify-center items-center hidden" id ="criarContaMenu">
-        <section class="bg-[#2d2638] min-w-400 min-h-220 rounded-2xl flex justify-between p-5">
+    <div class="z-30 w-full h-screen bg-transparent fixed flex justify-center items-center hidden" id ="criarContaMenu">
+        
+        <section class="bg-[#2d2638] max-w-100 max-h-150 lg:min-w-400 md:min-h-220 rounded-2xl grid lg:grid-cols-2 justify-between p-5">
 
-            <div class="bg-[url(img/machuPichu.jpg)] min-h-full min-w-[50%] bg-center bg-cover rounded-xl py-6 px-6">
+            <div class="bg-[url(img/machuPichu.jpg)] lg:min-h-full lg:min-w-[50%] min-h-[50%] bg-center bg-cover rounded-xl py-6 px-6">
 
                 <nav class="flex justify-between items-center">
                     <p class="text-5xl">ILC</p>
@@ -189,8 +190,8 @@
             </div>
 
             <div class ="flex justify-center items-center min-w-[50%] min-h-full px-35 py-20">
-                <section class="min-w-full">
-                    <h2 class="text-5xl">Criar uma conta</h2>
+                <section class="min-w-full border">
+                    <h2 class="text-6xl">Criar uma conta</h2>
 
                     <p class="mt-7 text-gray-400">Já possui uma conta? <span
                             class="underline cursor-pointer text-white">Entrar</span></p>
@@ -209,11 +210,13 @@
                         <input type="email" class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 mt-5" id="email"
                             placeholder="E-mail">
 
-                        <div class ="flex items-center">
-                            <input type="password" class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 mt-5"
+                        <div class ="w-full flex mt-5 items-center justify-end">
+                            <input type="password" class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5"
                                 name="password" id="password" placeholder="Digite sua senha">
 
-                                <img src="img/visibility.svg" class ="absolute">
+                                <img src="img/visibility.svg" class ="absolute py-3 px-5 cursor-pointer" id ="visibility">
+
+                                <img src="img/visibility-off.svg" class ="absolute py-3 px-5 cursor-pointer hidden" id ="visibilityOff">
                         </div>
 
                         <!-- Termos -->
@@ -238,7 +241,7 @@
                             </button>
 
                             <!-- Facebook -->
-                            <button class ="flex w-[50%] items-center justify-center gap-3 shadow-lg rounded-lg bg-transparent border py-3 px-5 mt-10 hover:bg-[#675d99]/20 cursor-pointerZ">
+                            <button class ="flex w-[50%] items-center justify-center gap-3 shadow-lg rounded-lg bg-transparent border py-3 px-5 mt-10 hover:bg-[#675d99]/20 cursor-pointer">
                                 <img class ="w-[20px]" src="img/facebook.png" alt="google">
                                 <p class ="pt-1">Facebook</p>
                             </button>
