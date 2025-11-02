@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
         brMobile.classList.toggle("hidden")
         enMobile.classList.toggle("hidden")
 
-
         landingPageP.innerText = "Exchange, Language and Culture"
         entrar.innerText = "Login"
         criarConta.innerText = "Sign up"

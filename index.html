@@ -9,6 +9,8 @@
     <script src="assets/js/dropdown.js"></script>
     <script src="assets/js/header.js"></script>
     <script src="assets/js/criarConta.js"></script>
+    <script src="assets/js/menuMobile.js"></script>
+    <link rel="stylesheet" href="scrollbarRemover.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
@@ -23,18 +25,18 @@
 
 <body class="font-[epilogue] text-white" id="home">
 
-    <header class="w-full p-10 min-h-20 flex items-center justify-between absolute md:text-xl transition duration-500"
+    <header
+        class="z-10 fixed w-full p-10 min-h-20 flex items-center justify-between absolute md:text-xl transition duration-500"
         id="header">
 
         <nav class="flex gap-20">
 
-            <a href="index.html">Logo</a>
+            <a href="index.html" class="text-3xl transition-all delay-75 duration-500" id="logo">ILC</a>
 
             <ul class="flex gap-10 max-lg:hidden">
 
                 <li class="cursor-pointer hover:text-gray-300" id="item1">Sobre nós</li>
 
-                <li class="cursor-pointer hover:text-gray-300" id="item2">Nossos programas</li>
 
 
 
@@ -70,6 +72,7 @@
                             <img src="img/icon-more.svg" class="max-w-7">
 
                         </li>
+
 
                         <!-- México -->
                         <li class="p-5 rounded-xl hover:bg-black/10 flex gap-3 justify-between">
@@ -114,6 +117,8 @@
 
                 </li>
 
+                <li class="cursor-pointer hover:text-gray-300" id="item2">Cronogramas</li>
+
                 <li class="cursor-pointer hover:text-gray-300" id="item4">Contato</li>
 
 
@@ -145,7 +150,7 @@
 
         </div>
 
-        <div class="lg:hidden">
+        <div class="lg:hidden z-40" id="list">
 
             <img src="img/icon-menu.svg">
 
@@ -153,107 +158,185 @@
 
     </header>
 
-    <!-- Escurecimento de tela -->
-    <div class ="w-full h-screen absolute -z-30 transition" id ="blackscreen">
+    <!-- Menu de criar Conta -->
 
-    </div>
+    <section
+        class="z-40 fixed h-full w-full flex justify-center items-center -translate-y-full transition-all delay-75 duration-500"
+        id="criarContaMenu">
 
-    <!-- Menu de criar conta -->
-    <div class="z-30 w-full h-screen bg-transparent fixed flex justify-center items-center hidden" id ="criarContaMenu">
-        
-        <section class="bg-[#2d2638] max-w-100 max-h-150 lg:min-w-400 md:min-h-220 rounded-2xl grid lg:grid-cols-2 justify-between p-5">
+        <!-- container -->
+        <div
+            class="p-5 gap-5 max-lg:h-full max-lg:w-full lg:min-w-350 lg:min-h-150 bg-[#2d2638] grid grid-cols-1 overflow-y-auto lg:grid-cols-2 lg:rounded-xl">
 
-            <div class="bg-[url(img/machuPichu.jpg)] lg:min-h-full lg:min-w-[50%] min-h-[50%] bg-center bg-cover rounded-xl py-6 px-6">
+            <!-- carrossel -->
+            <div class="w-full bg-[url(img/machuPichu.jpg)] bg-center bg-cover rounded-xl">
 
-                <nav class="flex justify-between items-center">
-                    <p class="text-5xl">ILC</p>
+                <div class="p-4 flex items-center justify-between lg:p-5">
+
+                    <h2 class="text-4xl lg:text-5xl">ILC</h2>
 
                     <button
-                        class="gap-2 bg-[#e3e3e3]/20 py-2 px-4 rounded-full flex justify-between cursor-pointer hover:bg-[#e3e3e3]/30" id ="retornar">Retornar
-                        à página <img src="img/arrow-forward.svg" class="max-w-4"></button>
-                </nav>
+                        class="bg-[#e3e3e3]/34 rounded-full py-1 px-3 text-[15px] cursor-pointer hover:bg-[#e3e3e3]/50 lg:text-lg lg:px-5 lg:py-2"
+                        id="retornar">
+                        Retornar à página
+                    </button>
 
-                <section class="mt-145">
-                    <h2 class="text-center text-4xl max-w-100 mx-auto">Intercâmbio, Linguagem e Cultura</h2>
 
-                    <div class="flex justify-between max-w-27 mx-auto mt-10">
+                </div>
 
-                        <div class="min-w-8 min-h-1.5 rounded-full bg-[#b4b4b4]"></div>
+                <p class="text-center mt-45 text-3xl max-w-80 justify-self-center lg:text-5xl lg:max-w-120 lg:mt-135">
+                    Intercâmbio, Linguagem e Cultura</p>
 
-                        <div class="min-w-8 min-h-1.5 rounded-full bg-[#b4b4b4]"></div>
+                <!-- Contador -->
+                <div class="flex justify-between max-w-27 lg:max-w-35 mx-auto my-5 lg:mt-10">
 
-                        <div class="min-w-8 min-h-1.5 rounded-full bg-[#b4b4b4]"></div>
+                    <div class="min-w-8 min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4]"></div>
+
+                    <div class="min-w-8 min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4]"></div>
+
+                    <div class="min-w-8 min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4]"></div>
+
+                </div>
+
+            </div>
+
+            <!-- Login -->
+            <div class="w-full rounded-xl bg-[#322f43] p-5 lg:flex flex-col justify-center items-center">
+                <form action="">
+
+                    <h2 class="text-4xl lg:text-6xl">Criar uma conta</h2>
+
+                    <p class="mt-3 text-gray-300 lg:text-lg lg:mt-5">Já possui uma conta? <a href=""
+                            class="text-gray-200 underline">Entrar</a></p>
+
+                    <!-- Nome e sobrenome -->
+                    <div class="grid grid-cols-2 mt-5 gap-3 w-full lg:mt-10 lg:gap-5">
+
+                        <input type="text"
+                            class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 max-h-10 text-sm lg:min-h-13 lg:text-base"
+                            name="nome" id="nome" placeholder="Nome">
+
+                        <input type="text"
+                            class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 max-h-10 text-sm lg:min-h-13 lg:text-base"
+                            name="sobrenome" id="sobrenome" placeholder="Sobrenome">
 
                     </div>
-                </section>
+
+                    <!-- Email -->
+                    <input type="email"
+                        class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 mt-3 max-h-10 text-sm lg:min-h-13 lg:text-base lg:mt-5"
+                        id="email" placeholder="E-mail">
+
+                    <!-- Senha -->
+                    <div class="w-full flex mt-5 items-center justify-end relative">
+                        <input type="password"
+                            class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 lg:min-h-13 lg:text-base"
+                            name="password" placeholder="Digite sua senha" id="passwordInput">
+
+                        <img src="img/visibility.svg" class="absolute py-3 px-5 cursor-pointer" id="visibility">
+
+                        <img src="img/visibility-off.svg" class="absolute py-3 px-5 cursor-pointer hidden"
+                            id="visibilityOff">
+                    </div>
+
+                    <!-- Termos -->
+                    <div class="flex items-center gap-4 mt-5 text-sm lg:text-base lg:mt-7">
+                        <input type="checkbox" name="terms" id="terms">
+                        <label for="terms">Eu concordo com os <a href="" class="text-purple-300 underline">Termos e
+                                Condições</a></label>
+                    </div>
+
+                    <button
+                        class="mx-auto shadow-lg rounded-lg w-full py-3 px-5 mt-5 lg:mt-7 bg-[#675d99] text-lg lg:text-xl lg:min-h-15 hover:bg-[#7966d6] cursor-pointer">Criar
+                        conta</button>
+
+                    <div class="inline-flex items-center justify-center w-full mt-7 relative lg:mt-10">
+                        <hr class="w-full border-gray-400">
+                        <span class="absolute bg-[#322f43] px-5 text-[12px] lg:text-sm text-gray-400">Ou registre-se
+                            com</span>
+                    </div>
+
+                    <div class="flex items-center gap-5 mt-5 lg:mt-10">
+
+                        <!-- Google -->
+                        <button
+                            class="flex w-[50%] items-center justify-center gap-3 shadow-lg rounded-lg bg-transparent border py-3 px-5 hover:bg-[#675d99]/20 cursor-pointer">
+                            <img class="w-[20px]" src="img/google.png" alt="google">
+                            <p class="pt-1">Google</p>
+                        </button>
+
+                        <!-- Facebook -->
+                        <button
+                            class="flex w-[50%] items-center justify-center gap-3 shadow-lg rounded-lg bg-transparent border py-3 px-5 hover:bg-[#675d99]/20 cursor-pointer">
+                            <img class="w-[20px]" src="img/facebook.png" alt="google">
+                            <p class="pt-1">Facebook</p>
+                        </button>
+
+                    </div>
+
+                </form>
 
             </div>
 
-            <div class ="flex justify-center items-center min-w-[50%] min-h-full px-35 py-20">
-                <section class="min-w-full border">
-                    <h2 class="text-6xl">Criar uma conta</h2>
+        </div>
 
-                    <p class="mt-7 text-gray-400">Já possui uma conta? <span
-                            class="underline cursor-pointer text-white">Entrar</span></p>
+    </section>
 
-                    <form class="mt-10">
-                        <!-- Nome e sobrenome -->
-                        <div class="min-w-full flex justify-between items-center gap-5">
+    <!-- Menu mobile -->
+    <section
+        class="p-10 bg-[#2d2638] h-screen min-w-[80%] fixed right-0 rounded-tl-2xl rounded-bl-2xl transition-all delay-75 duration-500 translate-x-full lg:hidden"
+        id="menuMobile">
 
-                            <input type="text" class="shadow-lg rounded-lg bg-[#483d5b] w-[50%] py-3 px-5" name="nome"
-                                id="nome" placeholder="Nome">
+        <div class="w-full min-h-20 flex items-center">
 
-                            <input type="text" class="shadow-lg rounded-lg bg-[#483d5b] w-[50%] py-3 px-5"
-                                name="sobrenome" id="sobrenome" placeholder="Sobrenome">
-                        </div>
+            <p class="text-3xl -translate-y-200 transition-all delay-75 duration-500" id="menuMobileLogo">ILC</p>
 
-                        <input type="email" class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 mt-5" id="email"
-                            placeholder="E-mail">
+        </div>
 
-                        <div class ="w-full flex mt-5 items-center justify-end">
-                            <input type="password" class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5"
-                                name="password" id="password" placeholder="Digite sua senha">
+        <ul class="w-full mt-20 text-xl flex flex-col gap-3">
 
-                                <img src="img/visibility.svg" class ="absolute py-3 px-5 cursor-pointer" id ="visibility">
+            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]"><img src="img/about.svg"> Sobre nós</li>
+            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]"><img src="img/flight.svg">Intercâmbios</li>
+            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]"><img src="img/date.svg"> Cronogramas</li>
+            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]"><img src="img/contact.svg"> Contato</li>
 
-                                <img src="img/visibility-off.svg" class ="absolute py-3 px-5 cursor-pointer hidden" id ="visibilityOff">
-                        </div>
+        </ul>
 
-                        <!-- Termos -->
-                        <div class ="flex items-center gap-4 mt-5">
-                            <input type="checkbox" name="terms" id="terms">
-                            <label for="terms">Eu concordo com os <a href="" class ="text-purple-300 underline">Termos e Condições</a></label>
-                        </div>
-                        
-                        <button class ="mx-auto shadow-lg rounded-lg w-full py-3 px-5 mt-10 bg-[#675d99] text-lg hover:bg-[#7966d6] cursor-pointer">Criar conta</button>
+        <hr class="mt-10 border-[#3e3e3e]">
 
-                        <div class ="inline-flex items-center justify-center w-full mt-10">
-                            <hr class ="w-full border-gray-400">
-                        <span class ="absolute bg-[#2d2638] p-5 text-[12px] text-gray-400">Ou registre-se com</span>
-                        </div>
+        <!-- perfil -->
+        <div class="mt-10 w-full rounded-xl bg-[#322f43]">
 
-                        <div class ="flex items-center gap-5">
+            <!-- top -->
+            <div class ="flex justify-between items-center p-5">
+                
+                <!-- pfp -->
+                <div class ="max-w-10">
+                    <img src="img/no pfp.jpg" class ="rounded-full">
+                </div>
 
-                            <!-- Google -->
-                            <button class ="flex w-[50%] items-center justify-center gap-3 shadow-lg rounded-lg bg-transparent border py-3 px-5 mt-10 hover:bg-[#675d99]/20 cursor-pointer">
-                                <img class ="w-[20px]" src="img/google.png" alt="google">
-                                <p class="pt-1">Google</p>
-                            </button>
+                <!-- Nickname -->
+                <div class ="px-3">
+                <h3 class>Usuário sem conta</h3>
+                <p class ="text-[10px] text-gray-400">Sem e-mail</p>
+                </div>
 
-                            <!-- Facebook -->
-                            <button class ="flex w-[50%] items-center justify-center gap-3 shadow-lg rounded-lg bg-transparent border py-3 px-5 mt-10 hover:bg-[#675d99]/20 cursor-pointer">
-                                <img class ="w-[20px]" src="img/facebook.png" alt="google">
-                                <p class ="pt-1">Facebook</p>
-                            </button>
-   
-                        </div>
+                <p class ="text-2xl">ILC</p>
 
-                    </form>
-                </section>
             </div>
 
-        </section>
-    </div>
+            <!-- bottom -->
+            <div class ="w-full flex justify-center items-center">
+
+            <button class ="mt-3 py-3 px-5 w-full text-xl bg-white/5 border rounded-xl m-2" id ="mobileCriarConta"> 
+                Criar conta
+            </button>
+
+            </div>
+
+        </div>
+
+    </section>
 
     <!-- Troca de idioma -->
     <div class="fixed lg:hidden max-lg:bottom-5 max-lg:left-5">
@@ -265,7 +348,7 @@
     </div>
 
     <!-- Retornar ao topo -->
-    <a href="#home" class="cursor-pointer">
+    <a href="#home" class="cursor-pointer" id="topo">
         <img src="img/arrow-up.svg" class="fixed bottom-5 right-5 max-w-10 bg-slate-300/30 border-2 rounded-full p-1">
     </a>
 
