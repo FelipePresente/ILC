@@ -8,14 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const visibility = document.querySelector("#visibility")
     const visibilityOff = document.querySelector("#visibilityOff")
     const passowordInput = document.querySelector("#passwordInput")
-    const topo = document.querySelector("#topo")
     const mobileCriarConta = document.querySelector("#mobileCriarConta")
     const menuMobile = document.querySelector("#menuMobile")
     const menuMobileLogo = document.querySelector("#menuMobileLogo")
     const logo = document.querySelector("#logo")
 
     criarConta.addEventListener("click", function () {
-        topo.classList.toggle("hidden")
         criarContaMenu.classList.toggle("-translate-y-full")
         body.classList.toggle("overflow-hidden")
         blackscreen.classList.toggle("bg-black/60")
@@ -23,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
     retornar.addEventListener("click", function () {
-        topo.classList.toggle("hidden")
         criarContaMenu.classList.toggle("-translate-y-full")
         body.classList.toggle("overflow-hidden")
         blackscreen.classList.toggle("bg-black/60")
