@@ -1,0 +1,30 @@
+html::-webkit-scrollbar {
+  display: none;
+}
+html {
+  scrollbar-width: none;
+}
+
+@media not all and (min-width: 1024px) {
+.max-lg\:scrollbar-hidden {
+  scrollbar-width: none
+  }
+}
+
+#scroll::-webkit-scrollbar {
+  height: 12px;
+}
+
+#scroll::-webkit-scrollbar-track {
+  background: #888;
+  border-radius: 10px;
+}
+
+#scroll::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 10px;
+}
+
+#scroll::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}

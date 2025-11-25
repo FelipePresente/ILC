@@ -10,7 +10,7 @@
     <script src="assets/js/header.js"></script>
     <script src="assets/js/criarConta.js"></script>
     <script src="assets/js/menuMobile.js"></script>
-    <link rel="stylesheet" href="scrollbarRemover.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
@@ -23,10 +23,10 @@
     <title>ILC</title>
 </head>
 
-<body class="font-[epilogue] text-white" id="home">
+<body class="font-[epilogue] overflow-x-hidden text-white" id="home">
 
     <header
-        class="z-10 fixed w-full p-10 min-h-20 flex items-center justify-between absolute md:text-xl transition duration-500"
+        class="z-10 fixed w-full p-10 min-h-20 flex items-center justify-between md:text-xl transition duration-500"
         id="header">
 
         <nav class="flex gap-20">
@@ -39,8 +39,8 @@
 
                 <li class="cursor-pointer" id="item3">
                     <p class="hover:text-gray-300 flex justify-center items-center gap-3">
-                    <span id="intercambios" class="flex justify-center items-center gap-3"><a
-                    id="intercambio" href ="#inter">Intercâmbios</a>
+                        <span id="intercambios" class="flex justify-center items-center gap-3"><a id="intercambio"
+                                href="#inter">Intercâmbios</a>
                 </li>
 
                 <li class="cursor-pointer hover:text-gray-300" id="item2">Cronogramas</li>
@@ -234,29 +234,29 @@
         <div class="mt-10 w-full rounded-xl bg-[#322f43]">
 
             <!-- top -->
-            <div class ="flex justify-between items-center p-5">
-                
+            <div class="flex justify-between items-center p-5">
+
                 <!-- pfp -->
-                <div class ="max-w-10">
-                    <img src="img/no pfp.jpg" class ="rounded-full">
+                <div class="max-w-10">
+                    <img src="img/no pfp.jpg" class="rounded-full">
                 </div>
 
                 <!-- Nickname -->
-                <div class ="px-3">
-                <h3 class>Usuário sem conta</h3>
-                <p class ="text-[10px] text-gray-400">Sem e-mail</p>
+                <div class="px-3">
+                    <h3 class>Usuário sem conta</h3>
+                    <p class="text-[10px] text-gray-400">Sem e-mail</p>
                 </div>
 
-                <p class ="text-2xl">ILC</p>
+                <p class="text-2xl">ILC</p>
 
             </div>
 
             <!-- bottom -->
-            <div class ="w-full flex justify-center items-center">
+            <div class="w-full flex justify-center items-center">
 
-            <button class ="mt-3 py-3 px-5 w-full text-xl bg-white/5 border rounded-xl m-2" id ="mobileCriarConta"> 
-                Criar conta
-            </button>
+                <button class="mt-3 py-3 px-5 w-full text-xl bg-white/5 border rounded-xl m-2" id="mobileCriarConta">
+                    Criar conta
+                </button>
 
             </div>
 
@@ -305,115 +305,226 @@
 
         </section>
 
-        <section class="w-full bg-[url('img/screen2.jpeg')] bg-cover bg-center h-screen flex max-lg:justify-center items-center" id="about">
+        <section
+            class="w-full bg-[url('img/america.webp')] bg-cover bg-center h-screen flex max-lg:justify-center items-center"
+            id="about">
 
-            <div class ="mb-20 p-10 lg:max-w-180 lg:mx-25">
-                <h2 class ="text-6xl lg:text-9xl">Sobre nós</h1>
+            <div class="mb-20 p-10 lg:max-w-180 lg:mx-25">
+                <h2 class="text-6xl lg:text-9xl">Sobre nós</h1>
 
-                <p class ="text-justify text-2xl/10 lg:text-4xl/12 mt-5">ILC - Intercâmbio, Linguagem e Cultura é uma organização com o objetivo de levar conhecimento, experiências e virtudes para pessoas ao redor do mundo por meio de intercâmbios culturais.</p>
+                    <p class="text-justify text-2xl/10 lg:text-4xl/12 mt-5">ILC - Intercâmbio, Linguagem e Cultura é uma
+                        agência com o objetivo de levar conhecimento, experiências e virtudes para pessoas ao redor do
+                        mundo por meio de intercâmbios culturais na América Latina.</p>
             </div>
 
         </section>
 
-        <section class ="w-full min-h-screen bg-[#96969c] flex justify-center items-center p-20">
+        <section class="w-full min-h-screen bg-[#96969c] flex justify-center items-center p-20">
 
-            <div class ="flex flex-col gap-20">
-            <h2 class ="text-4xl lg:text-6xl text-center">Com nossos intercâmbios, você adquire:</h2>
+            <div class="flex flex-col gap-20">
+                <h2 class="text-4xl lg:text-6xl text-center">Com nossos intercâmbios, você adquire:</h2>
 
-            <!-- itens -->
-            <div class ="grid lg:grid-cols-3 gap-10 items-center justify-center">
+                <!-- itens -->
+                <div class="grid lg:grid-cols-3 gap-10 items-center justify-center">
 
-                <!-- item 1 -->
-                <div class ="min-w-50 min-h-50 lg:max-h-100 aspect-square lg:min-w-70 bg-[url(img/item1.webp)] bg-cover bg-center flex items-center justify-center shadow-2xl bg-[#dfdbd4]">
+                    <!-- item 1 -->
+                    <div
+                        class="min-w-50 min-h-50 lg:max-h-100 aspect-square lg:min-w-70 bg-[url(img/item1.webp)] bg-cover bg-center flex items-center justify-center shadow-2xl bg-[#dfdbd4]">
 
-                    <p class ="max-w-80 text-4xl font-semibold text-center">conhecimento e experiências internacionais</p>
+                        <p class="max-w-80 text-4xl font-semibold text-center">conhecimento e experiências
+                            internacionais</p>
+
+                    </div>
+
+                    <!-- item 2 -->
+                    <div
+                        class="min-w-50 min-h-50 lg:max-h-100 aspect-square lg:min-w-70 bg-[url(img/item2.png)] bg-cover bg-center flex items-center justify-center shadow-2xl bg-[#dfdbd4]">
+
+                        <p class="max-w-40 text-4xl font-semibold text-center">trocas culturais</p>
+
+                    </div>
+
+                    <!-- item 3 -->
+                    <div
+                        class="min-w-50 min-h-50 lg:max-h-100 aspect-square lg:min-w-70 bg-[url(img/item3.png)] bg-cover bg-center flex items-center justify-center shadow-2xl">
+
+                        <p class="max-w-40 text-4xl font-semibold text-center">conexão ancestral</p>
+
+                    </div>
 
                 </div>
 
-                <!-- item 2 -->
-                <div class ="min-w-50 min-h-50 lg:max-h-100 aspect-square lg:min-w-70 bg-[url(img/item2.png)] bg-cover bg-center flex items-center justify-center shadow-2xl bg-[#dfdbd4]">
+                <p class="text-center mx-auto text-lg min-w-100 lg:max-w-200 lg:text-3xl">Respeitamos todas as
+                    identidades e culturas. Nosso espaço é seguro e acolhedor para todas as pessoas.</p>
 
-                    <p class ="max-w-40 text-4xl font-semibold text-center">trocas culturais</p>
-
-                </div>
-
-                <!-- item 3 -->
-                <div class ="min-w-50 min-h-50 lg:max-h-100 aspect-square lg:min-w-70 bg-[url(img/item3.png)] bg-cover bg-center flex items-center justify-center shadow-2xl">
-
-                    <p class ="max-w-40 text-4xl font-semibold text-center">conexão ancestral</p>
-
-                </div>
-
-            </div>
-
-            <p class ="text-center mx-auto text-lg min-w-100 lg:max-w-200 lg:text-3xl">Respeitamos todas as identidades e culturas. Nosso espaço é seguro e acolhedor para todas as pessoas.</p>
-            
             </div>
 
         </section>
 
         <!-- Intercâmbios -->
-        <section class ="bg-[#BFC6D2] min-h-screen w-full p-10" id ="inter">
+        <section class="bg-[#d3d2ce] min-h-screen w-full p-10" id="inter">
 
-            <div class ="mx-auto pt-20">
-            <h2 class ="text-5xl text-center text-[#182131] font-bold">Descubra mundos com ILC</h2>
-            <p class ="text-gray-500 pt-10 text-center">Conectando você a comunidades culturais vibrantes através de Intercâmbio, Linguagem e Cultura.</p>
-            </div>
+            <!-- Container -->
+            <div>
+            <h2 class="text-5xl lg:text-6xl text-center mt-20 font-bold">Descubra mundos com ILC</h2>
 
-            <div class ="grid mx-auto pt-20 max-w-500 gap-10">
+            <p class="text-gray-500 text-center mt-10 lg:text-2xl lg:max-w-200 mx-auto">Conectando você a comunidades
+                culturais vibrantes através de Intercâmbio, Linguagem e Cultura.</p>
+
+            <section
+                class="mt-10 max-h-130 lg:max-w-200 lg:max-h-none mx-auto gap-10 lg:gap-70 grid lg:grid-cols-5 snap-both items-center max-lg:justify-center overflow-auto lg:pb-5 max-lg:scrollbar-hidden" id ="scroll">
 
                 <!-- Item 1 -->
-                <div class ="min-w-75 min-h-120 bg-white rounded-xl grid p-5">
-                
-                    <div class ="bg-[url(img/Brasil.jpg)] bg-cover bg-center rounded-xl">
-                        
-                    </div>
+                <div class="bg-white rounded-xl grid snap-start w-60 shadow-md">
 
-                    <div></div>
+                    <div class="bg-[url(img/Brasil.jpg)] bg-cover bg-center min-h-40 rounded-t-xl"></div>
+
+                    <div class="p-5">
+
+                        <img src="img/travel.svg">
+
+                        <h2 class="text-stone-800 text-xl font-bold mt-2">Quilombas | 15 dias</h2>
+                        <p class="text-stone-800 text-sm mt-1">Brasil</p>
+
+                        <p class="text-stone-800 mt-5">Ida 01/12/2025</p>
+                        <p class="text-stone-800">Volta 15/12/2025</p>
+
+                        <p class="text-gray-500 text-sm mt-5">A partir de:</p>
+                        <p class="text-stone-800 font-bold text-xl mt-1">R$ 2.115</p>
+
+                        <hr class="mt-10 border-black">
+
+                        <p class="text-stone-800 mt-3 text-center text-sm font-semibold">Em até 15x sem juros</p>
+                    </div>
 
                 </div>
 
                 <!-- Item 2 -->
-                <div class ="min-w-75 min-h-120 bg-white rounded-xl grid p-5">
-                
-                    <div class ="bg-[url(img/Peru.png)] bg-cover bg-center rounded-xl">
+                <div class="bg-white rounded-xl grid snap-start w-60 shadow-md">
 
+                    <div class="bg-[url(img/bolivia.png)] bg-cover bg-center min-h-40 rounded-t-xl"></div>
+
+                    <div class="p-5">
+
+                        <img src="img/travel.svg">
+
+                        <h2 class="text-stone-800 text-xl font-bold mt-2">Andes | 15 dias</h2>
+                        <p class="text-stone-800 text-sm mt-1">Bolívia</p>
+
+                        <p class="text-stone-800 mt-5">Ida 03/12/2025</p>
+                        <p class="text-stone-800">Volta 18/12/2025</p>
+
+                        <p class="text-gray-500 text-sm mt-5">A partir de:</p>
+                        <p class="text-stone-800 font-bold text-xl mt-1">R$ 3.240</p>
+
+                        <hr class="mt-10 border-black">
+
+                        <p class="text-stone-800 mt-3 text-center text-sm font-semibold">Em até 15x sem juros</p>
                     </div>
-
-                    <div></div>
 
                 </div>
 
                 <!-- Item 3 -->
-                <div class ="min-w-75 min-h-120 bg-white rounded-xl grid p-5">
+                <div class="bg-white rounded-xl grid snap-start w-60 shadow-md">
 
-                    <div class ="bg-[url(img/bolivia.png)] bg-cover bg-center rounded-xl">
+                    <div class="bg-[url(img/guajira.webp)] bg-cover bg-center min-h-40 rounded-t-xl"></div>
 
+                    <div class="p-5">
+
+                        <img src="img/travel.svg">
+
+                        <h2 class="text-stone-800 text-xl font-bold mt-2">Guajira | 15 dias</h2>
+                        <p class="text-stone-800 text-sm mt-1">Venezuela</p>
+
+                        <p class="text-stone-800 mt-5">Ida 05/12/2025</p>
+                        <p class="text-stone-800">Volta 20/12/2025</p>
+
+                        <p class="text-gray-500 text-sm mt-5">A partir de:</p>
+                        <p class="text-stone-800 font-bold text-xl mt-1">R$ 2115</p>
+
+                        <hr class="mt-10 border-black">
+
+                        <p class="text-stone-800 mt-3 text-center text-sm font-semibold">Em até 15x sem juros</p>
                     </div>
 
-                    <div></div>    
+                </div>
+
+                <!-- Item 4 -->
+                <div class="bg-white rounded-xl grid snap-start w-60 shadow-md">
+
+                    <div class="bg-[url(img/mapuche.jpg)] bg-cover bg-center min-h-40 rounded-t-xl"></div>
+
+                    <div class="p-5">
+
+                        <img src="img/travel.svg">
+
+                        <h2 class="text-stone-800 text-xl font-bold mt-2">Mapuche | 15 dias</h2>
+                        <p class="text-stone-800 text-sm mt-1">Peru</p>
+
+                        <p class="text-stone-800 mt-5">Ida 09/12/2025</p>
+                        <p class="text-stone-800">Volta 24/12/2025</p>
+
+                        <p class="text-gray-500 text-sm mt-5">A partir de:</p>
+                        <p class="text-stone-800 font-bold text-xl mt-1">R$ 3.400</p>
+
+                        <hr class="mt-10 border-black">
+
+                        <p class="text-stone-800 mt-3 text-center text-sm font-semibold">Em até 15x sem juros</p>
+                    </div>
 
                 </div>
+
+                <!-- Item 5 -->
+                <div class="bg-white rounded-xl grid snap-start w-60 shadow-md">
+
+                    <div class="bg-[url(img/Peru.png)] bg-cover bg-center min-h-40 rounded-t-xl"></div>
+
+                    <div class="p-5">
+
+                        <img src="img/travel.svg">
+
+                        <h2 class="text-stone-800 text-xl font-bold mt-2">Mamacha | 18 dias</h2>
+                        <p class="text-stone-800 text-sm mt-1">Peru</p>
+
+                        <p class="text-stone-800 mt-5">Ida 02/02/2026</p>
+                        <p class="text-stone-800">Volta 20/02/2026</p>
+
+                        <p class="text-gray-500 text-sm mt-5">A partir de:</p>
+                        <p class="text-stone-800 font-bold text-xl mt-1">R$ 4.100</p>
+
+                        <hr class="mt-10 border-black">
+
+                        <p class="text-stone-800 mt-3 text-center text-sm font-semibold">Em até 15x sem juros</p>
+                    </div>
+
+                </div>
+
+            </section>
 
             </div>
 
         </section>
 
         <footer class="bg-slate-900 text-center w-full flex flex-col justify-center">
-            
-            <div class ="w-full min-h-10 bg-slate-800 flex justify-center items-center p-3">
 
-                <p class ="text-xl">Copyright © 2025 ILC - Intercâmbio, Linguagem e Cultura</p>
+            <div class="w-full min-h-10 bg-slate-800 flex justify-center items-center p-3">
+
+                <p class="text-xl">Copyright © 2025 ILC - Intercâmbio, Linguagem e Cultura</p>
 
             </div>
             <div class="flex justify-between px-10 gap-2 w-full lg:w-1/2 lg:mb-9 mx-auto my-6">
-                <a target="_blank" href="https://www.facebook.com/?locale=pt_BR"><img src="img/facebook-logo.svg" alt=""class=""></a>
-                <a target="_blank" href="https://www.instagram.com/"><img src="img/instagram-logo.svg" alt=""class=""></a>
-                <a target="_blank" href="https://github.com/FelipePresente/ILC"><img src="img/github-logo.svg" alt=""class=""></a>
-                <a target="_blank" href="https://www.youtube.com/@ZangadoReview"><img src="img/youtube-logo.svg" alt=""></a>
-                <a target="_blank" href="https://x.com/"><img src="img/x-logo.svg" alt=""></a></div> 
+                <a target="_blank" href="https://www.facebook.com/?locale=pt_BR"><img src="img/facebook-logo.svg" alt=""
+                        class=""></a>
+                <a target="_blank" href="https://www.instagram.com/"><img src="img/instagram-logo.svg" alt=""
+                        class=""></a>
+                <a target="_blank" href="https://github.com/FelipePresente/ILC"><img src="img/github-logo.svg" alt=""
+                        class=""></a>
+                <a target="_blank" href="https://www.youtube.com/@ZangadoReview"><img src="img/youtube-logo.svg"
+                        alt=""></a>
+                <a target="_blank" href="https://x.com/"><img src="img/x-logo.svg" alt=""></a>
+            </div>
         </footer>
-    </div>
+        </div>
 
     </main>
 
