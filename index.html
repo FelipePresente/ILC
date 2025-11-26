@@ -10,6 +10,8 @@
     <script src="assets/js/header.js"></script>
     <script src="assets/js/criarConta.js"></script>
     <script src="assets/js/menuMobile.js"></script>
+    <script src="assets/js/carrossel.js" defer></script>
+    <script src="assets/js/carrosselmenu.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,14 +97,14 @@
             class="p-5 gap-5 max-lg:h-full max-lg:w-full lg:min-w-350 lg:min-h-150 bg-[#2d2638] grid grid-cols-1 overflow-y-auto lg:grid-cols-2 lg:rounded-xl">
 
             <!-- carrossel -->
-            <div class="w-full bg-[url(img/machuPichu.jpg)] bg-center bg-cover rounded-xl">
+            <div id="carrosselmenu" class="w-full bg-[url(img/machuPichu.jpg)] bg-center bg-cover rounded-xl ">
 
                 <div class="p-4 flex items-center justify-between lg:p-5">
 
-                    <h2 class="text-4xl lg:text-5xl">ILC</h2>
+                    <h2 class="text-4xl lg:text-5xl z-10">ILC</h2>
 
                     <button
-                        class="bg-[#e3e3e3]/34 rounded-full py-1 px-3 text-[15px] cursor-pointer hover:bg-[#e3e3e3]/50 lg:text-lg lg:px-5 lg:py-2"
+                        class="bg-[#e3e3e3]/34 rounded-full py-1 px-3 text-[15px] cursor-pointer hover:bg-[#e3e3e3]/50 lg:text-lg lg:px-5 lg:py-2 z-10"
                         id="retornar">
                         Retornar à página
                     </button>
@@ -110,17 +112,17 @@
 
                 </div>
 
-                <p class="text-center mt-45 text-3xl max-w-80 justify-self-center lg:text-5xl lg:max-w-120 lg:mt-135">
+                <p class="text-center mt-45 text-3xl max-w-80 justify-self-center lg:text-5xl lg:max-w-120 lg:mt-135 z-10">
                     Intercâmbio, Linguagem e Cultura</p>
 
                 <!-- Contador -->
                 <div class="flex justify-between max-w-27 lg:max-w-35 mx-auto my-5 lg:mt-10">
 
-                    <div class="min-w-8 min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4]"></div>
+                    <div id="barra" class="min-w-8 min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-10"></div>
 
-                    <div class="min-w-8 min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4]"></div>
+                    <div id="barra" class="min-w-8 min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-10"></div>
 
-                    <div class="min-w-8 min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4]"></div>
+                    <div id="barra" class="min-w-8 min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-10"></div>
 
                 </div>
 
@@ -305,16 +307,36 @@
 
         </section>
 
-        <section
-            class="w-full bg-[url('img/america.webp')] bg-cover bg-center h-screen flex max-lg:justify-center items-center"
-            id="about">
+        <section class="w-full h-screen flex max-lg:justify-center items-center" id="about">
 
-            <div class="mb-20 p-10 lg:max-w-180 lg:mx-25">
-                <h2 class="text-6xl lg:text-9xl">Sobre nós</h1>
+            <div class="w-full h-full flex max-lg:flex-col max-lg:relative ">
+                <!-- LADO ESQUERDO (30% a 40%) -->
+                <div class="w-1/3 max-lg:w-full bg-black max-lg:bg-transparent flex flex-col justify-center px-10 py-16 text-white max-lg:text-center max-lg:absolute max-lg:top-0 max-lg:left-0 max-lg:z-20">
+                    <!-- Você pode colocar logo, texto, botão etc -->
+                <h2 class=" font-bold text-5xl lg:text-8xl">Sobre nós</h1>
+                        <p class=" text-justify max-lg:text-center text-xl lg:text-3xl mt-5">ILC - Intercâmbio, Linguagem e Cultura
+                            é uma agência com o objetivo de levar conhecimento, experiências e virtudes para pessoas ao
+                            redor do mundo por meio de intercâmbios culturais na América Latina.</p>
+                </div>
 
-                    <p class="text-justify text-2xl/10 lg:text-4xl/12 mt-5">ILC - Intercâmbio, Linguagem e Cultura é uma
-                        agência com o objetivo de levar conhecimento, experiências e virtudes para pessoas ao redor do
-                        mundo por meio de intercâmbios culturais na América Latina.</p>
+                <!-- LADO DIREITO (CARROSSEL) -->
+                <div class="w-2/3 max-lg:w-full h-full relative overflow-hidden">
+
+                    <div class="absolute inset-0 bg-black/40 lg:bg-transparent z-10"></div>
+
+                    <div id="carrossel" class="absolute inset-0 flex transition-transform duration-700">
+                        <img src="img/carnaval.webp" class="w-full h-full object-cover">
+                        <img src="img/img2.jpg" class="w-full h-full object-cover">
+                        <img src="img/img3.png" class="w-full h-full object-cover">
+                    </div>
+                    <!-- IMAGEM FIXA POR CIMA DO CARROSSEL -->
+                    <img src="sua-imagem-fixa.png"
+                        class="hidden lg:block absolute inset-0 m-auto z-20 w-64 h-64 object-contain pointer-events-none">
+                    <!-- ajuste o tamanho como quiser -->
+                </div>
+
+            </div>
+            </p>
             </div>
 
         </section>
