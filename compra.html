@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finalizar Compra - ILC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Epilogue', sans-serif;
+        }
+
+        @keyframes fly {
+            0% {
+                transform: translate(-120vw, 120vh) rotate(-15deg) scale(1);
+                opacity: 0;
+            }
+
+            /* Entra e fica visível */
+            20% {
+                transform: translate(-20vw, 20vh) rotate(-15deg) scale(1.05);
+                opacity: 1;
+            }
+
+            /* Ainda parado (pausa dura) */
+            50% {
+                transform: translate(0vw, 0vh) rotate(-15deg) scale(1.05);
+            }
+
+            /* Sai para o topo direito */
+            100% {
+                transform: translate(120vw, -120vh) rotate(-15deg) scale(1);
+                opacity: 0;
+            }
+        }
+
+        @keyframes barmove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 200% 50%;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-[#f0f0f2] min-h-screen flex flex-col text-gray-800">
+
+    <!-- Loader -->
+    <div id="tela-carregamento"
+        class="fixed inset-0 z-[99999] flex flex-col items-center justify-center gap-4 bg-gradient-to-b from-[#f3f3f3] to-[#f3f3f3] transition-opacity duration-1000">
+        <div class="w-28 h-28 md:w-36 md:h-36 flex items-center justify-center">
+            <img src="img/airplane.png" alt="Ícone de avião"
+                class="animate-[fly_5s_ease-in-out_infinite] w-full h-full" />
+        </div>
+        <p class="text-gray-600 font-bold text-lg md:text-xl tracking-wide">Aguarde um instante</p>
+        <div
+            class="w-24 h-2 rounded-full bg-gradient-to-r from-[#f3f3f3] via-[#322f43] to-[#f3f3f3] bg-[length:200%_100%] animate-[barmove_2s_linear_infinite]">
+        </div>
+    </div>
+
+    <!-- Conteúdo da Página (Inicialmente oculto ou abaixo do loader) -->
+    <div id="conteudo-pagina" class="hidden opacity-0 transition-opacity duration-500 flex-grow flex flex-col">
+
+        <!-- Header CVC Style -->
+        <header class="w-full p-10 min-h-20 flex items-center justify-between md:text-xl text-[#322f43]">
+            <nav class="flex gap-20">
+                <a href="index.html" class="text-3xl font-bold">ILC</a>
+                <ul class="flex gap-10 max-lg:hidden">
+                    <li class="cursor-pointer hover:text-gray-600"><a href="index.html#about" id="compra-about">Sobre
+                            nós</a></li>
+                    <li class="cursor-pointer hover:text-gray-600"><a href="index.html#inter"
+                            id="compra-intercambios">Intercâmbios</a></li>
+                    <li class="cursor-pointer hover:text-gray-600" id="compra-contact">Contato</li>
+                </ul>
+            </nav>
+            <div class="flex gap-5 items-center justify-center max-lg:hidden md:text-xl">
+                <!-- Troca de idioma -->
+                <img src="img/BR-icon.png" alt="pt-br" class="max-w-10 cursor-pointer" id="br-compra">
+                <img src="img/USA-icon.png" alt="en" class="max-w-10 cursor-pointer hidden" id="en-compra">
+                <img src="img/SPAIN-icon.png" alt="spn" class="max-w-10 cursor-pointer hidden" id="spanish-compra">
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow bg-[#f0f0f2] py-8 px-4">
+            <div class="max-w-7xl mx-auto">
+
+                <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-8" id="compra-selected-package">Pacote
+                    selecionado</h1>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+                    <!-- Coluna Esquerda: Voo e Hotel -->
+                    <div class="lg:col-span-2 space-y-6">
+
+                        <!-- Card Voo -->
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                            <div class="bg-gray-100 px-6 py-3 border-b border-gray-200 flex items-center gap-2">
+                                <img src="img/travel2.svg" class="w-6 h-6">
+                                <h2 class="font-bold text-gray-700" id="compra-flight">Voo</h2>
+                                <span class="ml-auto text-xs text-gray-500"></span>
+                            </div>
+                            <div class="p-6 space-y-6">
+                                <!-- Ida -->
+                                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                    <div class="flex items-center gap-4">
+                                        <div class="flex flex-col items-center">
+                                            <span class="text-[#322f43] font-bold text-lg"
+                                                id="compra-departure">Ida</span>
+                                            <span class="text-xs text-gray-500" id="data-ida-display">--/--/----</span>
+                                        </div>
+                                        <div class="h-10 w-px bg-gray-300 mx-2"></div>
+                                        <div>
+                                            <p class="font-bold text-xl">11:40</p>
+                                            <p class="text-xs text-gray-500">GRU</p>
+                                        </div>
+                                        <div class="flex-grow px-4 hidden md:block">
+                                            <div class="border-t border-gray-300 relative top-2"></div>
+                                            <p class="text-[10px] text-center text-gray-400 mt-1"
+                                                id="compra-direct-flight">Voo direto</p>
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-xl">15:45</p>
+                                            <p class="text-xs text-gray-500" id="destino-sigla">DEST</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span
+                                            class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Reembolsável</span>
+                                    </div>
+                                </div>
+                                <hr class="border-gray-100">
+                                <!-- Volta -->
+                                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                    <div class="flex items-center gap-4">
+                                        <div class="flex flex-col items-center">
+                                            <span class="text-[#322f43] font-bold text-lg"
+                                                id="compra-return">Volta</span>
+                                            <span class="text-xs text-gray-500"
+                                                id="data-volta-display">--/--/----</span>
+                                        </div>
+                                        <div class="h-10 w-px bg-gray-300 mx-2"></div>
+                                        <div>
+                                            <p class="font-bold text-xl">16:55</p>
+                                            <p class="text-xs text-gray-500" id="destino-sigla-volta">DEST</p>
+                                        </div>
+                                        <div class="flex-grow px-4 hidden md:block">
+                                            <div class="border-t border-gray-300 relative top-2"></div>
+                                            <p class="text-[10px] text-center text-gray-400 mt-1"
+                                                id="compra-direct-flight">Voo direto</p>
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-xl">21:10</p>
+                                            <p class="text-xs text-gray-500">GRU</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Hotel -->
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                            <div class="bg-gray-100 px-6 py-3 border-b border-gray-200 flex items-center gap-2">
+                                <img src="img/bed.svg" class="w-6 h-6">
+                                <h2 class="font-bold text-gray-700" id="compra-hotel">Hotel</h2>
+                                <span class="ml-auto text-xs text-gray-500"></span>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-col md:flex-row gap-6">
+                                    <div
+                                        class="w-full md:w-48 h-32 bg-gray-200 rounded-lg overflow-hidden flex-shrink-0">
+                                        <img src="img/hotel-placeholder.jpg"
+                                            onerror="this.src='https://placehold.co/400x300?text=Hotel+Image'"
+                                            alt="Hotel" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="flex-grow">
+                                        <div class="flex items-start justify-between">
+                                            <div>
+                                                <div class="flex text-[#322f43] text-sm mb-1">★★★★☆</div>
+                                                <h3 class="font-bold text-lg text-gray-800">Hotel Premium <span
+                                                        id="hotel-location">Local</span></h3>
+                                                <p class="text-xs text-gray-500 underline cursor-pointer"
+                                                    id="compra-view-map">Veja no mapa
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-4 flex gap-4 text-sm text-gray-600 bg-[#f0f0f2] p-3 rounded-lg">
+                                            <div class="flex flex-col">
+                                                <span class="font-bold text-[#322f43]"
+                                                    id="compra-checkin">Entrada</span>
+                                                <span id="hotel-checkin">--/--</span>
+                                            </div>
+                                            <div class="w-px bg-gray-300"></div>
+                                            <div class="flex flex-col">
+                                                <span class="font-bold text-[#322f43]">Saída</span>
+                                                <span id="hotel-checkout">--/--</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-4">
+                                            <p class="font-bold text-sm" id="compra-room-type">1x Standard Casal</p>
+                                            <div class="flex gap-2 mt-2">
+                                                <span
+                                                    class="text-[10px] bg-gray-100 text-gray-600 px-2 py-1 rounded-full flex items-center gap-1">☕
+                                                    Café da manhã</span>
+                                                <span
+                                                    class="text-[10px] bg-[#d3d2ce] text-[#322f43] px-2 py-1 rounded-full">Não
+                                                    Reembolsável</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Coluna Direita: Resumo -->
+                    <div class="lg:col-span-1">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden sticky top-6">
+                            <div class="bg-gray-100 px-6 py-3 border-b border-gray-200">
+                                <h2 class="font-bold text-gray-700" id="compra-summary">Resumo</h2>
+                            </div>
+                            <div class="p-6 space-y-4">
+                                <!-- Seletor de Viajantes -->
+                                <div class="mb-4 pb-4 border-b border-gray-200">
+                                    <label class="text-sm text-gray-600 block mb-2">Número de viajantes</label>
+                                    <div class="flex items-center gap-3">
+                                        <button id="decrease-travelers"
+                                            class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-[#322f43] font-bold">-</button>
+                                        <span id="num-travelers"
+                                            class="text-lg font-bold text-[#322f43] min-w-8 text-center">1</span>
+                                        <button id="increase-travelers"
+                                            class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-[#322f43] font-bold">+</button>
+                                    </div>
+                                </div>
+
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-600" id="compra-price-per-traveler">Valor por viajante</span>
+                                    <span class="font-medium" id="valor-viajante">R$ --</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-600" id="compra-taxes">Taxas e impostos</span>
+                                    <span class="font-medium">R$ 305,00</span>
+                                </div>
+
+                                <hr class="border-gray-100 my-4">
+
+                                <div class="flex justify-between items-end">
+                                    <span class="text-sm text-[#322f43] font-bold" id="compra-final-price">Valor
+                                        final</span>
+                                    <div class="text-right">
+                                        <span class="block text-xs text-gray-400" id="travelers-label">1 viajante</span>
+                                        <span class="text-2xl font-bold text-gray-800" id="valor-total">R$ --</span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-[#d3d2ce]/30 border border-[#d3d2ce] rounded p-2 text-center">
+                                    <span class="text-xs text-[#322f43] font-medium">Não Reembolsável</span>
+                                </div>
+
+                                <button
+                                    class="w-full bg-[#322f43] text-white font-bold py-4 rounded-lg hover:bg-[#2a2738] transition shadow-sm text-lg">
+                                    <span id="compra-book-now">Reservar Agora</span>
+                                </button>
+
+                                <p class="text-[10px] text-center text-gray-500">
+                                    Taxas inclusas | Em até 12x
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-slate-900 text-white py-8 mt-12">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <p class="text-sm text-white">Copyright © 2025 ILC - Intercâmbio, Linguagem e Cultura</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="assets/js/compra.js"></script>
+    <script src="assets/js/compraTranslations.js"></script>
+
+</body>
+
+</html>

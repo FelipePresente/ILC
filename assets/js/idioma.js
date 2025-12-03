@@ -98,6 +98,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const card5Ida = document.getElementById("card5Ida")
     const card5Volta = document.getElementById("card5Volta")
 
+    // Check localStorage for saved language
+    const savedLanguage = localStorage.getItem('selectedLanguage');
+    if (savedLanguage === 'en') {
+        trocarEnglish();
+    } else if (savedLanguage === 'es') {
+        // Toggle sequence to reach Spanish
+        trocarEnglish();
+        trocarEspanhol();
+    }
+
     function trocarEnglish() {
         br.classList.toggle("hidden")
         en.classList.toggle("hidden")
@@ -170,6 +180,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (mobileCriarContaBtn) mobileCriarContaBtn.textContent = 'Sign up'
         if (mobileUsuarioText) mobileUsuarioText.textContent = 'User without account'
         if (mobileEmailText) mobileEmailText.textContent = 'No email'
+
+        localStorage.setItem('selectedLanguage', 'en');
     }
 
     function trocarEspanhol() {
@@ -244,6 +256,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (mobileCriarContaBtn) mobileCriarContaBtn.textContent = 'Crear cuenta'
         if (mobileUsuarioText) mobileUsuarioText.textContent = 'Usuario sin cuenta'
         if (mobileEmailText) mobileEmailText.textContent = 'Sin correo'
+
+        localStorage.setItem('selectedLanguage', 'es');
     }
 
     function trocarBr() {
@@ -318,9 +332,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (mobileCriarContaBtn) mobileCriarContaBtn.textContent = 'Criar conta'
         if (mobileUsuarioText) mobileUsuarioText.textContent = 'Usuário sem conta'
         if (mobileEmailText) mobileEmailText.textContent = 'Sem e-mail'
+
+        localStorage.setItem('selectedLanguage', 'pt');
     }
 
-    br.onclick = function() {
+    br.onclick = function () {
         trocarEnglish()
     }
 

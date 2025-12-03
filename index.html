@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br" class="scroll-smooth">
 
 <head>
@@ -20,268 +20,180 @@
         href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
         rel="stylesheet">
     <title>ILC</title>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+    </style>
 </head>
 
 <body class="font-[epilogue] overflow-x-hidden text-white" id="home">
 
+    <div class="fixed w-full h-screen transition-all delay-75 duration-500 pointer-events-none" id="blackscreen"></div>
+
     <header class="z-10 fixed w-full p-10 min-h-20 flex items-center justify-between md:text-xl transition duration-500"
         id="header">
-
         <nav class="flex gap-20">
-
             <a href="index.html" class="text-3xl transition-all delay-75 duration-500" id="logo">ILC</a>
-
             <ul class="flex gap-10 max-lg:hidden">
-
-                <li class="cursor-pointer hover:text-gray-300" id="item1"><a href="#about" id="aboutLink">Sobre nós</a></li>
-
+                <li class="cursor-pointer hover:text-gray-300" id="item1"><a href="#about" id="aboutLink">Sobre nós</a>
+                </li>
                 <li class="cursor-pointer" id="item3">
                     <p class="hover:text-gray-300 flex justify-center items-center gap-3">
                         <span id="intercambios" class="flex justify-center items-center gap-3"><a id="intercambio"
-                                href="#inter">Intercâmbios</a>
+                                href="#inter">Intercâmbios</a></span>
+                    </p>
                 </li>
-
                 <li class="cursor-pointer hover:text-gray-300" id="item2">Cronogramas</li>
-
                 <li class="cursor-pointer hover:text-gray-300" id="item4">Contato</li>
-
-
-
             </ul>
-
         </nav>
-
         <div class="flex gap-5 items-center justify-center max-lg:hidden md:text-xl">
-
-            <!-- Troca de idioma -->
             <img src="img/BR-icon.png" alt="pt-br" class="max-w-10 cursor-pointer" id="br">
-
             <img src="img/USA-icon.png" alt="en" class="max-w-10 cursor-pointer hidden" id="en">
-
             <img src="img/SPAIN-icon.png" alt="spn" class="max-w-10 cursor-pointer hidden" id="spanish">
-
-            <button class="p-3 lg:p-4 min-w-25 rounded-xl hover:bg-black/30 cursor-pointer" id="entrar">
-
-                Entrar
-
-            </button>
-
-            <button class="bg-black/30 p-3 lg:p-4 min-w-41 rounded-xl hover:bg-black/10 cursor-pointer" id="criarConta">
-
-                Criar conta
-
-            </button>
-
+            <button
+                class="p-3 lg:p-4 min-w-25 rounded-xl hover:bg-black/40 cursor-pointer transition-all duration-300 hover:scale-105"
+                id="entrar">Entrar</button>
+            <button
+                class="bg-black/30 p-3 lg:p-4 min-w-41 rounded-xl hover:bg-black/50 cursor-pointer transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md"
+                id="criarConta">Criar conta</button>
         </div>
-
         <div class="lg:hidden z-40" id="list">
-
             <img src="img/icon-menu.svg">
-
         </div>
-
     </header>
 
     <!-- Menu de criar Conta -->
-
     <section
         class="z-40 fixed h-full w-full flex justify-center items-center -translate-y-full transition-all delay-75 duration-500"
         id="criarContaMenu">
-
-        <!-- container -->
         <div
             class="p-5 gap-5 max-lg:h-full max-lg:w-full lg:min-w-350 lg:min-h-150 bg-[#2d2638] grid grid-cols-1 overflow-y-auto lg:grid-cols-2 lg:rounded-xl">
-
-            <!-- carrossel -->
-            <!-- carrossel -->
-            <!-- carrossel -->
             <div id="carrosselmenu"
                 class="w-full bg-[url(img/machuPichu.jpg)] bg-center bg-cover rounded-xl min-h-[400px] sm:min-h-[500px] flex flex-col">
-
                 <div class="p-4 flex items-center justify-between lg:p-5">
-
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl z-20 font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-                        ILC</h2>
-
-                    <button
-                        class="bg-[#e3e3e3]/34 rounded-full py-1 px-3 text-sm sm:text-[15px] cursor-pointer hover:bg-[#e3e3e3]/50 lg:text-lg lg:px-5 lg:py-2 z-20"
-                        id="retornar">
-                        Retornar à página
-                    </button>
-
+                    <div class="flex-grow"></div>
+                    <p class="text-center text-2xl sm:text-3xl max-w-[280px] sm:max-w-80 justify-self-center mx-auto lg:text-5xl lg:max-w-120 z-20 font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] px-4 mb-5 sm:mb-8"
+                        id="carrosselSubtitle">Intercâmbio, Linguagem e Cultura</p>
+                    <div class="flex justify-center gap-2 max-w-32 sm:max-w-35 mx-auto mb-8 sm:mb-10 lg:mb-5">
+                        <div id="barra"
+                            class="w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
+                        </div>
+                        <div id="barra"
+                            class="w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
+                        </div>
+                        <div id="barra"
+                            class="w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Espaçador para empurrar o conteúdo para baixo -->
-                <div class="flex-grow"></div>
-
-                <p
-                    class="text-center text-2xl sm:text-3xl max-w-[280px] sm:max-w-80 justify-self-center mx-auto lg:text-5xl lg:max-w-120 z-20 font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] px-4 mb-5 sm:mb-8"
-                    id="carrosselSubtitle">
-                    Intercâmbio, Linguagem e Cultura</p>
-
-                <!-- Contador -->
-                <div class="flex justify-center gap-2 max-w-32 sm:max-w-35 mx-auto mb-8 sm:mb-10 lg:mb-5">
-
-                    <div id="barra"
-                        class="w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
-                    </div>
-
-                    <div id="barra"
-                        class="w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
-                    </div>
-
-                    <div id="barra"
-                        class="w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Login -->
-            <div class="w-full rounded-xl bg-[#322f43] p-5 lg:flex flex-col justify-center items-center">
-                <form action="">
-
+                <!-- Login Form -->
+                <div class="w-full rounded-xl bg-[#322f43] p-5 lg:flex flex-col justify-center items-center">
+                    <form action="">
                         <h2 class="text-4xl lg:text-6xl" id="criarContaTitle">Criar uma conta</h2>
-
                         <p class="mt-3 text-gray-300 lg:text-lg lg:mt-5" id="jaTemConta">Já possui uma conta? <a href=""
-                            class="text-gray-200 underline">Entrar</a></p>
-
-                    <!-- Nome e sobrenome -->
-                    <div class="grid grid-cols-2 mt-5 gap-3 w-full lg:mt-10 lg:gap-5">
-
-                        <input type="text"
-                            class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 max-h-10 text-sm lg:min-h-13 lg:text-base"
-                            name="nome" id="nome" placeholder="Nome">
-
-                        <input type="text"
-                            class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 max-h-10 text-sm lg:min-h-13 lg:text-base"
-                            name="sobrenome" id="sobrenome" placeholder="Sobrenome">
-
-                    </div>
-
-                    <!-- Email -->
-                    <input type="email"
-                        class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 mt-3 max-h-10 text-sm lg:min-h-13 lg:text-base lg:mt-5"
-                        id="email" placeholder="E-mail">
-
-                    <!-- Senha -->
-                    <div class="w-full flex mt-5 items-center justify-end relative">
-                        <input type="password"
-                            class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 lg:min-h-13 lg:text-base"
-                            name="password" placeholder="Digite sua senha" id="passwordInput">
-
-                        <img src="img/visibility.svg" class="absolute py-3 px-5 cursor-pointer" id="visibility">
-
-                        <img src="img/visibility-off.svg" class="absolute py-3 px-5 cursor-pointer hidden"
-                            id="visibilityOff">
-                    </div>
-
-                    <!-- Termos -->
-                    <div class="flex items-center gap-4 mt-5 text-sm lg:text-base lg:mt-7">
-                        <input type="checkbox" name="terms" id="terms">
-                        <label for="terms" id="termsLabel">Eu concordo com os <a href="" class="text-purple-300 underline">Termos e
-                                    Condições</a></label>
-                    </div>
-
-                    <button
-                        class="mx-auto shadow-lg rounded-lg w-full py-3 px-5 mt-5 lg:mt-7 bg-[#675d99] text-lg lg:text-xl lg:min-h-15 hover:bg-[#7966d6] cursor-pointer" id="criarContaBtn">Criar
-                        conta</button>
-
-                    <div class="inline-flex items-center justify-center w-full mt-7 relative lg:mt-10">
-                        <hr class="w-full border-gray-400">
-                        <span class="absolute bg-[#322f43] px-5 text-[12px] lg:text-sm text-gray-400" id="ouRegistreComSpan">Ou registre-se
-                            com</span>
-                    </div>
-
-                    <div class="flex items-center gap-5 mt-5 lg:mt-10">
-
-                        <!-- Google -->
+                                class="text-gray-200 underline">Entrar</a></p>
+                        <div class="grid grid-cols-2 mt-5 gap-3 w-full lg:mt-10 lg:gap-5">
+                            <input type="text"
+                                class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 max-h-10 text-sm lg:min-h-13 lg:text-base"
+                                name="nome" id="nome" placeholder="Nome">
+                            <input type="text"
+                                class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 max-h-10 text-sm lg:min-h-13 lg:text-base"
+                                name="sobrenome" id="sobrenome" placeholder="Sobrenome">
+                        </div>
+                        <input type="email"
+                            class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 mt-3 max-h-10 text-sm lg:min-h-13 lg:text-base lg:mt-5"
+                            id="email" placeholder="E-mail">
+                        <div class="w-full flex mt-5 items-center justify-end relative">
+                            <input type="password"
+                                class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 lg:min-h-13 lg:text-base"
+                                name="password" placeholder="Digite sua senha" id="passwordInput">
+                            <img src="img/visibility.svg" class="absolute py-3 px-5 cursor-pointer" id="visibility">
+                            <img src="img/visibility-off.svg" class="absolute py-3 px-5 cursor-pointer hidden"
+                                id="visibilityOff">
+                        </div>
+                        <div class="flex items-center gap-4 mt-5 text-sm lg:text-base lg:mt-7">
+                            <input type="checkbox" name="terms" id="terms">
+                            <label for="terms" id="termsLabel">Eu concordo com os <a href=""
+                                    class="text-purple-300 underline">Termos e Condições</a></label>
+                        </div>
                         <button
-                            class="flex w-[50%] items-center justify-center gap-3 shadow-lg rounded-lg bg-transparent border py-3 px-5 hover:bg-[#675d99]/20 cursor-pointer">
-                            <img class="w-[20px]" src="img/google.png" alt="google">
-                            <p class="pt-1">Google</p>
-                        </button>
-
-                        <!-- Facebook -->
-                        <button
-                            class="flex w-[50%] items-center justify-center gap-3 shadow-lg rounded-lg bg-transparent border py-3 px-5 hover:bg-[#675d99]/20 cursor-pointer">
-                            <img class="w-[20px]" src="img/facebook.png" alt="google">
-                            <p class="pt-1">Facebook</p>
-                        </button>
-
-                    </div>
-
-                </form>
-
+                            class="mx-auto shadow-lg rounded-lg w-full py-3 px-5 mt-5 lg:mt-7 bg-[#675d99] text-lg lg:text-xl lg:min-h-15 hover:bg-[#7966d6] cursor-pointer"
+                            id="criarContaBtn">Criar conta</button>
+                        <div class="inline-flex items-center justify-center w-full mt-7 relative lg:mt-10">
+                            <hr class="w-full border-gray-400">
+                            <span class="absolute bg-[#322f43] px-5 text-[12px] lg:text-sm text-gray-400"
+                                id="ouRegistreComSpan">Ou registre-se com</span>
+                        </div>
+                        <div class="flex items-center gap-5 mt-5 lg:mt-10">
+                            <button
+                                class="flex w-[50%] items-center justify-center gap-3 shadow-lg rounded-lg bg-transparent border py-3 px-5 hover:bg-[#675d99]/20 cursor-pointer">
+                                <img class="w-[20px]" src="img/google.png" alt="google">
+                                <p class="pt-1">Google</p>
+                            </button>
+                            <button
+                                class="flex w-[50%] items-center justify-center gap-3 shadow-lg rounded-lg bg-transparent border py-3 px-5 hover:bg-[#675d99]/20 cursor-pointer">
+                                <img class="w-[20px]" src="img/facebook.png" alt="google">
+                                <p class="pt-1">Facebook</p>
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
-
         </div>
-
     </section>
 
     <!-- Menu mobile -->
     <section
         class="p-10 bg-[#2d2638] h-screen min-w-[80%] fixed right-0 rounded-tl-2xl rounded-bl-2xl transition-all delay-75 duration-500 translate-x-full lg:hidden"
         id="menuMobile">
-
         <div class="w-full min-h-20 flex items-center">
-
             <p class="text-3xl -translate-y-200 transition-all delay-75 duration-500" id="menuMobileLogo">ILC</p>
-
         </div>
-
         <ul class="w-full mt-20 text-xl flex flex-col gap-3">
-
-            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileAbout"><img src="img/about.svg"> <span id="mobileAboutText">Sobre nós</span></li>
-            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileIntercambios"><img src="img/flight.svg"><span id="mobileIntercambiosText">Intercâmbios</span></li>
-            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileSchedules"><img src="img/date.svg"> <span id="mobileSchedulesText">Cronogramas</span></li>
-            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileContact"><img src="img/contact.svg"> <span id="mobileContactText">Contato</span></li>
-
+            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileAbout"><img
+                    src="img/about.svg"><span id="mobileAboutText">Sobre nós</span></li>
+            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileIntercambios"><img
+                    src="img/flight.svg"><span id="mobileIntercambiosText">Intercâmbios</span></li>
+            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileSchedules"><img
+                    src="img/date.svg"> <span id="mobileSchedulesText">Cronogramas</span></li>
+            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileContact"><img
+                    src="img/contact.svg"> <span id="mobileContactText">Contato</span></li>
         </ul>
-
         <hr class="mt-10 border-[#3e3e3e]">
-
-        <!-- perfil -->
         <div class="mt-10 w-full rounded-xl bg-[#322f43]">
-
-            <!-- top -->
             <div class="flex justify-between items-center p-5">
-
-                <!-- pfp -->
-                <div class="max-w-10">
-                    <img src="img/no pfp.jpg" class="rounded-full">
-                </div>
-
-                <!-- Nickname -->
+                <div class="max-w-10"><img src="img/no pfp.jpg" class="rounded-full"></div>
                 <div class="px-3">
                     <h3 class id="mobileUsuarioText">Usuário sem conta</h3>
                     <p class="text-[10px] text-gray-400" id="mobileEmailText">Sem e-mail</p>
                 </div>
-
                 <p class="text-2xl">ILC</p>
-
             </div>
-
-            <!-- bottom -->
             <div class="w-full flex justify-center items-center">
-
-                <button class="mt-3 py-3 px-5 w-full text-xl bg-white/5 border rounded-xl m-2" id="mobileCriarContaBtn">
-                    Criar conta
-                </button>
-
+                <button class="mt-3 py-3 px-5 w-full text-xl bg-white/5 border rounded-xl m-2"
+                    id="mobileCriarContaBtn">Criar conta</button>
             </div>
-
         </div>
-
     </section>
 
-    <!-- Troca de idioma -->
+    <!-- Troca de idioma Mobile -->
     <div class="fixed lg:hidden max-lg:bottom-5 max-lg:left-5">
         <img src="img/BR-icon.png" alt="pt-br" class="max-w-10 cursor-pointer" id="brMobile">
-
         <img src="img/USA-icon.png" alt="en" class="max-w-10 cursor-pointer hidden" id="enMobile">
-
         <img src="img/SPAIN-icon.png" alt="spn" class="max-w-10 cursor-pointer hidden" id="spanishMobile">
     </div>
 
@@ -291,268 +203,171 @@
     </a>
 
     <main>
-
-        <!-- landing page -->
+        <!-- Landing Page -->
         <section
             class="w-full h-screen bg-[url('img/landingPage.png')] bg-cover bg-center flex justify-center items-center">
-
-            <!-- container -->
             <div class="flex flex-col justify-center items-center">
-
-                <h1 class="text-7xl text-center md:text-9xl tracking-widest">ILC</h1>
-
-                <p class="text-center p-4 text-xl md:text-3xl" id="landingPageP">Intercâmbio, Linguagem e Cultura</p>
-
+                <h1 class="text-7xl text-center md:text-9xl tracking-widest animate-fade-in-up">ILC</h1>
+                <p class="text-center p-4 text-xl md:text-3xl animate-fade-in-up" id="landingPageP">Intercâmbio,
+                    Linguagem e Cultura</p>
                 <a href="#about">
                     <button
-                        class="mt-4 py-3 px-5 w-35 bg-black/70 text-white rounded-xl md:text-xl cursor-pointer hover:bg-black"
-                        id="acessar">
-
-                        Acessar
-
-                    </button>
+                        class="mt-4 py-3 px-5 w-35 bg-black/70 text-white rounded-xl md:text-xl cursor-pointer hover:bg-black hover:scale-105 transition-all duration-300 shadow-lg"
+                        id="acessar">Acessar</button>
                 </a>
-
             </div>
-
         </section>
 
+        <!-- Sobre Nós -->
         <section
             class="w-full bg-[url('img/america.webp')] bg-cover bg-center h-screen flex max-lg:justify-center items-center"
             id="about">
-
             <div class="mb-20 p-10 lg:max-w-180 lg:mx-25">
-                <h2 class="text-6xl lg:text-9xl" id="sobreNosTitle">Sobre nós</h2>
-
-                    <p class="text-justify text-2xl/10 lg:text-4xl/12 mt-5" id="sobreNosDesc">ILC - Intercâmbio, Linguagem e Cultura é uma
-                        agência com o objetivo de levar conhecimento, experiências e virtudes para pessoas ao redor do
-                        mundo por meio de intercâmbios culturais na América Latina.</p>
+                <h2 class="text-6xl lg:text-9xl animate-fade-in-up" id="sobreNosTitle">Sobre nós</h2>
+                <p class="text-justify text-2xl/10 lg:text-4xl/12 mt-5 animate-fade-in-up" id="sobreNosDesc">ILC -
+                    Intercâmbio, Linguagem e Cultura é uma agência com o objetivo de levar conhecimento, experiências e
+                    virtudes para pessoas ao redor do mundo por meio de intercâmbios culturais na América Latina.</p>
             </div>
-
         </section>
 
+        <!-- Com nossos intercâmbios -->
         <section class="w-full min-h-screen bg-[#96969c] flex justify-center items-center p-20">
-
             <div class="flex flex-col gap-20">
-                <h2 class="text-4xl lg:text-6xl text-center min-h-24 lg:min-h-32 flex items-center justify-center" id="comIntercambiosTitle">Com nossos intercâmbios, você adquire:</h2>
-
-                <!-- itens -->
+                <h2 class="text-4xl lg:text-6xl text-center min-h-24 lg:min-h-32 flex items-center justify-center"
+                    id="comIntercambiosTitle">Com nossos intercâmbios, você adquire:</h2>
                 <div class="grid lg:grid-cols-3 gap-10 items-center justify-center">
-
-                    <!-- item 1 -->
                     <div
                         class="min-w-50 min-h-50 lg:max-h-100 aspect-square lg:min-w-70 bg-[url(img/item1.webp)] bg-cover bg-center flex items-center justify-center shadow-2xl bg-[#dfdbd4]">
-
-                        <p class="max-w-80 text-4xl font-semibold text-center line-clamp-3" id="item1Text">conhecimento e experiências
-                            internacionais</p>
-
+                        <p class="max-w-80 text-4xl font-semibold text-center line-clamp-3" id="item1Text">conhecimento
+                            e experiências internacionais</p>
                     </div>
-
-                    <!-- item 2 -->
                     <div
                         class="min-w-50 min-h-50 lg:max-h-100 aspect-square lg:min-w-70 bg-[url(img/item2.png)] bg-cover bg-center flex items-center justify-center shadow-2xl bg-[#dfdbd4]">
-
-                        <p class="max-w-60 text-4xl font-semibold text-center line-clamp-3" id="item2Text">trocas culturais</p>
-
+                        <p class="max-w-60 text-4xl font-semibold text-center line-clamp-3" id="item2Text">trocas
+                            culturais</p>
                     </div>
-
-                    <!-- item 3 -->
                     <div
                         class="min-w-50 min-h-50 lg:max-h-100 aspect-square lg:min-w-70 bg-[url(img/item3.png)] bg-cover bg-center flex items-center justify-center shadow-2xl">
-
-                        <p class="max-w-50 text-4xl font-semibold text-center line-clamp-3" id="item3Text">conexão ancestral</p>
-
+                        <p class="max-w-50 text-4xl font-semibold text-center line-clamp-3" id="item3Text">conexão
+                            ancestral</p>
                     </div>
-
                 </div>
-
-                <p class="text-center mx-auto text-lg min-w-100 lg:max-w-200 lg:text-3xl line-clamp-4 min-h-20 lg:min-h-28 flex items-center justify-center" id="respeitamosText">Respeitamos todas as
-                    identidades e culturas. Nosso espaço é seguro e acolhedor para todas as pessoas.</p>
-
+                <p class="text-center mx-auto text-lg min-w-100 lg:max-w-200 lg:text-3xl line-clamp-4 min-h-20 lg:min-h-28 flex items-center justify-center"
+                    id="respeitamosText">Respeitamos todas as identidades e culturas. Nosso espaço é seguro e acolhedor
+                    para todas as pessoas.</p>
             </div>
-
         </section>
 
         <!-- Intercâmbios -->
-        <!-- Intercâmbios -->
-        <section class="bg-[#d3d2ce]  min-h-screen w-full flex items-center" id="inter">
-
-            <section class="bg-[url(img/img.webp)] max-lg:hidden bg-cover bg-center w-1/2 min-h-screen">
-            </section>
-
-            <!-- Container -->
+        <section class="bg-[#d3d2ce] min-h-screen w-full flex items-center" id="inter">
+            <section class="bg-[url(img/img.webp)] max-lg:hidden bg-cover bg-center w-1/2 min-h-screen"></section>
             <section class="w-full flex justify-center items-center">
                 <div>
-                    <h2 class="text-5xl lg:text-6xl text-center mt-20 font-bold" id="descobraMundosTitle">Descubra mundos com ILC</h2>
-
-                    <p class="text-gray-500 text-center mt-10 lg:text-2xl lg:max-w-200 mx-auto" id="conectandoVoceDesc">Conectando você a
-                        comunidades
-                        culturais vibrantes através de Intercâmbio, Linguagem e Cultura.</p>
-
+                    <h2 class="text-5xl lg:text-6xl text-center mt-20 font-bold animate-fade-in-up"
+                        id="descobraMundosTitle">Descubra mundos com ILC</h2>
+                    <p class="text-gray-500 text-center mt-10 lg:text-2xl lg:max-w-200 mx-auto" id="conectandoVoceDesc">
+                        Conectando você a comunidades culturais vibrantes através de Intercâmbio, Linguagem e Cultura.
+                    </p>
                     <section
                         class="mt-10 max-h-130 lg:max-w-200 lg:max-h-none mx-auto gap-10 lg:gap-70 grid lg:grid-cols-5 snap-both items-center max-lg:justify-center overflow-auto lg:pb-5 max-lg:scrollbar-hidden"
                         id="scroll">
-
                         <!-- Item 1 -->
-                        <div class="bg-white rounded-xl grid snap-start w-60 shadow-md cursor-pointer">
-
+                        <div onclick="window.location.href='compra.html?title=Quilombas&country=Brasil&price=2.115&ida=01/12/2025&volta=15/12/2025'"
+                            class="bg-white rounded-xl grid snap-start w-60 shadow-md cursor-pointer hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-out">
                             <div class="bg-[url(img/Brasil.jpg)] bg-cover bg-center min-h-40 rounded-t-xl"></div>
-
                             <div class="p-5">
-
                                 <img src="img/travel.svg">
-
-                                <h2 class="text-stone-800 text-xl font-bold mt-2" id="card1Title">Quilombas | 15 dias</h2>
+                                <h2 class="text-stone-800 text-xl font-bold mt-2" id="card1Title">Quilombas | 15 dias
+                                </h2>
                                 <p class="text-stone-800 text-sm mt-1" id="card1Country">Brasil</p>
-
                                 <p class="text-stone-800 mt-5"><span id="card1Ida">Ida</span> 01/12/2025</p>
                                 <p class="text-stone-800"><span id="card1Volta">Volta</span> 15/12/2025</p>
-
                                 <p class="text-gray-500 text-sm mt-5" id="card1From">A partir de:</p>
                                 <p class="text-stone-800 font-bold text-xl mt-1" id="card1Price">R$ 2.115</p>
-
                                 <hr class="mt-10 border-black">
-
-                                <p class="text-stone-800 mt-3 text-center text-sm font-semibold" id="card1Install">Em até 15x sem juros
-                                </p>
+                                <p class="text-stone-800 mt-3 text-center text-sm font-semibold" id="card1Install">Em
+                                    até 15x sem juros</p>
                             </div>
-
                         </div>
-
                         <!-- Item 2 -->
-                        <div class="bg-white rounded-xl grid snap-start w-60 shadow-md cursor-pointer">
-
+                        <div onclick="window.location.href='compra.html?title=Andes&country=Bolívia&price=3.240&ida=03/12/2025&volta=18/12/2025'"
+                            class="bg-white rounded-xl grid snap-start w-60 shadow-md cursor-pointer hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-out">
                             <div class="bg-[url(img/bolivia.png)] bg-cover bg-center min-h-40 rounded-t-xl"></div>
-
                             <div class="p-5">
-
                                 <img src="img/travel.svg">
-
                                 <h2 class="text-stone-800 text-xl font-bold mt-2" id="card2Title">Andes | 15 dias</h2>
                                 <p class="text-stone-800 text-sm mt-1" id="card2Country">Bolívia</p>
-
                                 <p class="text-stone-800 mt-5"><span id="card2Ida">Ida</span> 03/12/2025</p>
                                 <p class="text-stone-800"><span id="card2Volta">Volta</span> 18/12/2025</p>
-
                                 <p class="text-gray-500 text-sm mt-5" id="card2From">A partir de:</p>
                                 <p class="text-stone-800 font-bold text-xl mt-1" id="card2Price">R$ 3.240</p>
-
                                 <hr class="mt-10 border-black">
-
-                                <p class="text-stone-800 mt-3 text-center text-sm font-semibold" id="card2Install">Em até 15x sem juros
-                                </p>
+                                <p class="text-stone-800 mt-3 text-center text-sm font-semibold" id="card2Install">Em
+                                    até 15x sem juros</p>
                             </div>
-
                         </div>
-
                         <!-- Item 3 -->
-                        <div class="bg-white rounded-xl grid snap-start w-60 shadow-md cursor-pointer">
-
+                        <div onclick="window.location.href='compra.html?title=Guajira&country=Venezuela&price=2.430&ida=05/12/2025&volta=20/12/2025'"
+                            class="bg-white rounded-xl grid snap-start w-60 shadow-md cursor-pointer hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-out">
                             <div class="bg-[url(img/guajira.webp)] bg-cover bg-center min-h-40 rounded-t-xl"></div>
-
                             <div class="p-5">
-
                                 <img src="img/travel.svg">
-
                                 <h2 class="text-stone-800 text-xl font-bold mt-2" id="card3Title">Guajira | 15 dias</h2>
                                 <p class="text-stone-800 text-sm mt-1" id="card3Country">Venezuela</p>
-
                                 <p class="text-stone-800 mt-5"><span id="card3Ida">Ida</span> 05/12/2025</p>
                                 <p class="text-stone-800"><span id="card3Volta">Volta</span> 20/12/2025</p>
-
                                 <p class="text-gray-500 text-sm mt-5" id="card3From">A partir de:</p>
                                 <p class="text-stone-800 font-bold text-xl mt-1" id="card3Price">R$ 2.430</p>
-
                                 <hr class="mt-10 border-black">
-
-                                <p class="text-stone-800 mt-3 text-center text-sm font-semibold" id="card3Install">Em até 15x sem juros
-                                </p>
+                                <p class="text-stone-800 mt-3 text-center text-sm font-semibold" id="card3Install">Em
+                                    até 15x sem juros</p>
                             </div>
-
                         </div>
-
                         <!-- Item 4 -->
-                        <div class="bg-white rounded-xl grid snap-start w-60 shadow-md cursor-pointer">
-
+                        <div onclick="window.location.href='compra.html?title=Mapuche&country=Chile&price=3.400&ida=09/12/2025&volta=24/12/2025'"
+                            class="bg-white rounded-xl grid snap-start w-60 shadow-md cursor-pointer hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-out">
                             <div class="bg-[url(img/mapuche.jpg)] bg-cover bg-center min-h-40 rounded-t-xl"></div>
-
                             <div class="p-5">
-
                                 <img src="img/travel.svg">
-
                                 <h2 class="text-stone-800 text-xl font-bold mt-2" id="card4Title">Mapuche | 15 dias</h2>
                                 <p class="text-stone-800 text-sm mt-1" id="card4Country">Chile</p>
-
                                 <p class="text-stone-800 mt-5"><span id="card4Ida">Ida</span> 09/12/2025</p>
                                 <p class="text-stone-800"><span id="card4Volta">Volta</span> 24/12/2025</p>
-
                                 <p class="text-gray-500 text-sm mt-5" id="card4From">A partir de:</p>
                                 <p class="text-stone-800 font-bold text-xl mt-1" id="card4Price">R$ 3.400</p>
-
                                 <hr class="mt-10 border-black">
-
-                                <p class="text-stone-800 mt-3 text-center text-sm font-semibold" id="card4Install">Em até 15x sem juros
-                                </p>
+                                <p class="text-stone-800 mt-3 text-center text-sm font-semibold" id="card4Install">Em
+                                    até 15x sem juros</p>
                             </div>
-
                         </div>
-
                         <!-- Item 5 -->
-                        <div class="bg-white rounded-xl grid snap-start w-60 shadow-md cursor-pointer">
-
+                        <div onclick="window.location.href='compra.html?title=Mamacha&country=Peru&price=4.100&ida=02/02/2026&volta=20/02/2026'"
+                            class="bg-white rounded-xl grid snap-start w-60 shadow-md cursor-pointer hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-out">
                             <div class="bg-[url(img/Peru.png)] bg-cover bg-center min-h-40 rounded-t-xl"></div>
-
                             <div class="p-5">
-
                                 <img src="img/travel.svg">
-
                                 <h2 class="text-stone-800 text-xl font-bold mt-2" id="card5Title">Mamacha | 18 dias</h2>
                                 <p class="text-stone-800 text-sm mt-1" id="card5Country">Peru</p>
-
                                 <p class="text-stone-800 mt-5"><span id="card5Ida">Ida</span> 02/02/2026</p>
                                 <p class="text-stone-800"><span id="card5Volta">Volta</span> 20/02/2026</p>
-
                                 <p class="text-gray-500 text-sm mt-5" id="card5From">A partir de:</p>
                                 <p class="text-stone-800 font-bold text-xl mt-1" id="card5Price">R$ 4.100</p>
-
                                 <hr class="mt-10 border-black">
-
-                                <p class="text-stone-800 mt-3 text-center text-sm font-semibold" id="card5Install">Em até 15x sem juros
-                                </p>
+                                <p class="text-stone-800 mt-3 text-center text-sm font-semibold" id="card5Install">Em
+                                    até 15x sem juros</p>
                             </div>
-
                         </div>
-
                     </section>
-
                 </div>
             </section>
-
         </section>
 
-        <footer class="bg-slate-900 text-center w-full flex flex-col justify-center">
-
-            <div class="w-full min-h-10 bg-slate-800 flex justify-center items-center p-3">
-
-                <p class="text-xl" id="footerCopyright">Copyright © 2025 ILC - Intercâmbio, Linguagem e Cultura</p>
-
-            </div>
-            <div class="flex justify-between px-10 gap-2 w-full lg:w-1/2 lg:mb-9 mx-auto my-6">
-                <a target="_blank" href="https://www.facebook.com/?locale=pt_BR"><img src="img/facebook-logo.svg" alt=""
-                        class=""></a>
-                <a target="_blank" href="https://www.instagram.com/"><img src="img/instagram-logo.svg" alt=""
-                        class=""></a>
-                <a target="_blank" href="https://github.com/FelipePresente/ILC"><img src="img/github-logo.svg" alt=""
-                        class=""></a>
-                <a target="_blank" href="https://www.youtube.com/@ZangadoReview"><img src="img/youtube-logo.svg"
-                        alt=""></a>
-                <a target="_blank" href="https://x.com/"><img src="img/x-logo.svg" alt=""></a>
+        <footer class="bg-slate-900 text-white py-8">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <p class="text-sm text-white">Copyright © 2025 ILC - Intercâmbio, Linguagem e Cultura</p>
             </div>
         </footer>
-        </div>
-
     </main>
-
 </body>
 
 </html>
