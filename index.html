@@ -233,10 +233,10 @@
 
         <ul class="w-full mt-20 text-xl flex flex-col gap-3">
 
-            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]"><img src="img/about.svg"> Sobre nós</li>
-            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]"><img src="img/flight.svg">Intercâmbios</li>
-            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]"><img src="img/date.svg"> Cronogramas</li>
-            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]"><img src="img/contact.svg"> Contato</li>
+            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileAbout"><img src="img/about.svg"> <span id="mobileAboutText">Sobre nós</span></li>
+            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileIntercambios"><img src="img/flight.svg"><span id="mobileIntercambiosText">Intercâmbios</span></li>
+            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileSchedules"><img src="img/date.svg"> <span id="mobileSchedulesText">Cronogramas</span></li>
+            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileContact"><img src="img/contact.svg"> <span id="mobileContactText">Contato</span></li>
 
         </ul>
 
@@ -255,8 +255,8 @@
 
                 <!-- Nickname -->
                 <div class="px-3">
-                    <h3 class>Usuário sem conta</h3>
-                    <p class="text-[10px] text-gray-400">Sem e-mail</p>
+                    <h3 class id="mobileUsuarioText">Usuário sem conta</h3>
+                    <p class="text-[10px] text-gray-400" id="mobileEmailText">Sem e-mail</p>
                 </div>
 
                 <p class="text-2xl">ILC</p>
@@ -266,7 +266,7 @@
             <!-- bottom -->
             <div class="w-full flex justify-center items-center">
 
-                <button class="mt-3 py-3 px-5 w-full text-xl bg-white/5 border rounded-xl m-2" id="mobileCriarConta">
+                <button class="mt-3 py-3 px-5 w-full text-xl bg-white/5 border rounded-xl m-2" id="mobileCriarContaBtn">
                     Criar conta
                 </button>
 
@@ -334,7 +334,7 @@
         <section class="w-full min-h-screen bg-[#96969c] flex justify-center items-center p-20">
 
             <div class="flex flex-col gap-20">
-                <h2 class="text-4xl lg:text-6xl text-center" id="comIntercambiosTitle">Com nossos intercâmbios, você adquire:</h2>
+                <h2 class="text-4xl lg:text-6xl text-center min-h-24 lg:min-h-32 flex items-center justify-center" id="comIntercambiosTitle">Com nossos intercâmbios, você adquire:</h2>
 
                 <!-- itens -->
                 <div class="grid lg:grid-cols-3 gap-10 items-center justify-center">
@@ -343,7 +343,7 @@
                     <div
                         class="min-w-50 min-h-50 lg:max-h-100 aspect-square lg:min-w-70 bg-[url(img/item1.webp)] bg-cover bg-center flex items-center justify-center shadow-2xl bg-[#dfdbd4]">
 
-                        <p class="max-w-80 text-4xl font-semibold text-center" id="item1Text">conhecimento e experiências
+                        <p class="max-w-80 text-4xl font-semibold text-center line-clamp-3" id="item1Text">conhecimento e experiências
                             internacionais</p>
 
                     </div>
@@ -352,7 +352,7 @@
                     <div
                         class="min-w-50 min-h-50 lg:max-h-100 aspect-square lg:min-w-70 bg-[url(img/item2.png)] bg-cover bg-center flex items-center justify-center shadow-2xl bg-[#dfdbd4]">
 
-                        <p class="max-w-40 text-4xl font-semibold text-center" id="item2Text">trocas culturais</p>
+                        <p class="max-w-60 text-4xl font-semibold text-center line-clamp-3" id="item2Text">trocas culturais</p>
 
                     </div>
 
@@ -360,13 +360,13 @@
                     <div
                         class="min-w-50 min-h-50 lg:max-h-100 aspect-square lg:min-w-70 bg-[url(img/item3.png)] bg-cover bg-center flex items-center justify-center shadow-2xl">
 
-                        <p class="max-w-40 text-4xl font-semibold text-center" id="item3Text">conexão ancestral</p>
+                        <p class="max-w-50 text-4xl font-semibold text-center line-clamp-3" id="item3Text">conexão ancestral</p>
 
                     </div>
 
                 </div>
 
-                <p class="text-center mx-auto text-lg min-w-100 lg:max-w-200 lg:text-3xl" id="respeitamosText">Respeitamos todas as
+                <p class="text-center mx-auto text-lg min-w-100 lg:max-w-200 lg:text-3xl line-clamp-4 min-h-20 lg:min-h-28 flex items-center justify-center" id="respeitamosText">Respeitamos todas as
                     identidades e culturas. Nosso espaço é seguro e acolhedor para todas as pessoas.</p>
 
             </div>

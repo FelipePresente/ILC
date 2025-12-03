@@ -50,6 +50,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // rodapé
     const footerCopyright = document.getElementById("footerCopyright")
 
+    // Menu mobile
+    const mobileAboutText = document.getElementById("mobileAboutText")
+    const mobileIntercambiosText = document.getElementById("mobileIntercambiosText")
+    const mobileSchedulesText = document.getElementById("mobileSchedulesText")
+    const mobileContactText = document.getElementById("mobileContactText")
+    const mobileCriarContaBtn = document.getElementById("mobileCriarContaBtn")
+    const mobileUsuarioText = document.getElementById("mobileUsuarioText")
+    const mobileEmailText = document.getElementById("mobileEmailText")
+
     // cards (1..5) - Ida e Volta
     const card1Title = document.getElementById("card1Title")
     const card1Country = document.getElementById("card1Country")
@@ -154,6 +163,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (card4Volta) card4Volta.textContent = 'Return'
         if (card5Ida) card5Ida.textContent = 'Departure'
         if (card5Volta) card5Volta.textContent = 'Return'
+        if (mobileAboutText) mobileAboutText.textContent = 'About us'
+        if (mobileIntercambiosText) mobileIntercambiosText.textContent = 'Exchanges'
+        if (mobileSchedulesText) mobileSchedulesText.textContent = 'Schedules'
+        if (mobileContactText) mobileContactText.textContent = 'Contact'
+        if (mobileCriarContaBtn) mobileCriarContaBtn.textContent = 'Sign up'
+        if (mobileUsuarioText) mobileUsuarioText.textContent = 'User without account'
+        if (mobileEmailText) mobileEmailText.textContent = 'No email'
     }
 
     function trocarEspanhol() {
@@ -221,6 +237,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (card4Volta) card4Volta.textContent = 'Regreso'
         if (card5Ida) card5Ida.textContent = 'Salida'
         if (card5Volta) card5Volta.textContent = 'Regreso'
+        if (mobileAboutText) mobileAboutText.textContent = 'Sobre nosotros'
+        if (mobileIntercambiosText) mobileIntercambiosText.textContent = 'Intercambios'
+        if (mobileSchedulesText) mobileSchedulesText.textContent = 'Horarios'
+        if (mobileContactText) mobileContactText.textContent = 'Contacto'
+        if (mobileCriarContaBtn) mobileCriarContaBtn.textContent = 'Crear cuenta'
+        if (mobileUsuarioText) mobileUsuarioText.textContent = 'Usuario sin cuenta'
+        if (mobileEmailText) mobileEmailText.textContent = 'Sin correo'
     }
 
     function trocarBr() {
@@ -288,6 +311,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (card4Volta) card4Volta.textContent = 'Volta'
         if (card5Ida) card5Ida.textContent = 'Ida'
         if (card5Volta) card5Volta.textContent = 'Volta'
+        if (mobileAboutText) mobileAboutText.textContent = 'Sobre nós'
+        if (mobileIntercambiosText) mobileIntercambiosText.textContent = 'Intercâmbios'
+        if (mobileSchedulesText) mobileSchedulesText.textContent = 'Cronogramas'
+        if (mobileContactText) mobileContactText.textContent = 'Contato'
+        if (mobileCriarContaBtn) mobileCriarContaBtn.textContent = 'Criar conta'
+        if (mobileUsuarioText) mobileUsuarioText.textContent = 'Usuário sem conta'
+        if (mobileEmailText) mobileEmailText.textContent = 'Sem e-mail'
     }
 
     br.onclick = function() {
