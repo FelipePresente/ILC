@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const visibility = document.querySelector("#visibility")
     const visibilityOff = document.querySelector("#visibilityOff")
     const passowordInput = document.querySelector("#passwordInput")
-    const mobileCriarConta = document.querySelector("#mobileCriarConta")
+    const mobileCriarContaBtn = document.querySelector("#mobileCriarContaBtn")
     const menuMobile = document.querySelector("#menuMobile")
     const menuMobileLogo = document.querySelector("#menuMobileLogo")
     const logo = document.querySelector("#logo")
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         blackscreen.classList.toggle("z-0")
     })
 
-    mobileCriarConta.addEventListener("click", function (){
+    mobileCriarContaBtn.addEventListener("click", function (){
         menuMobile.classList.toggle("translate-x-full")
         criarContaMenu.classList.toggle("-translate-y-full")
         logo.classList.toggle("-translate-y-200")
