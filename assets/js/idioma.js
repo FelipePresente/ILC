@@ -56,8 +56,23 @@ document.addEventListener("DOMContentLoaded", function () {
     const mobileSchedulesText = document.getElementById("mobileSchedulesText")
     const mobileContactText = document.getElementById("mobileContactText")
     const mobileCriarContaBtn = document.getElementById("mobileCriarContaBtn")
+    const mobileEntrar = document.getElementById("mobileEntrar")
     const mobileUsuarioText = document.getElementById("mobileUsuarioText")
     const mobileEmailText = document.getElementById("mobileEmailText")
+
+    // Entrar (login) modal elements
+    const entrarTitle = document.getElementById("entrarTitle")
+    const jaTemEntrar = document.getElementById("jaTemEntrar")
+    const entrarEmail = document.getElementById("entrarEmail")
+    const entrarPasswordInput = document.getElementById("entrarPasswordInput")
+    const entrarBtnModal = document.getElementById("entrarBtn")
+    const ouEntrarSpan = document.getElementById("ouEntrarSpan")
+    const entrarCarrosselSubtitle = document.getElementById("entrarCarrosselSubtitle")
+    const retornarEntrar = document.getElementById("retornarEntrar")
+
+    // Links dos modais - IMPORTANTE: mantém a referência aos links
+    const linkEntrarFromCriar = document.getElementById("linkEntrarFromCriar")
+    const linkCriarFromEntrar = document.getElementById("linkCriarFromEntrar")
 
     // cards (1..5) - Ida e Volta
     const card1Title = document.getElementById("card1Title")
@@ -122,7 +137,11 @@ document.addEventListener("DOMContentLoaded", function () {
         descobraMundosTitle.textContent = "Discover worlds with ILC"
         conectandoVoceDesc.textContent = "Connecting you to vibrant cultural communities through Exchange, Language and Culture."
         criarContaTitle.textContent = "Create an account"
-        jaTemConta.innerHTML = "Already have an account? <a href=\"\" class=\"text-gray-200 underline\">Login</a>"
+        // FIX: Atualiza apenas o texto, mantendo o link intacto
+        if (jaTemConta) {
+            jaTemConta.childNodes[0].textContent = "Already have an account? "
+            if (linkEntrarFromCriar) linkEntrarFromCriar.textContent = "Login"
+        }
         nomeInput.placeholder = "Name"
         sobrenomeInput.placeholder = "Last name"
         emailInput.placeholder = "Email"
@@ -168,8 +187,21 @@ document.addEventListener("DOMContentLoaded", function () {
         if (mobileSchedulesText) mobileSchedulesText.textContent = 'Schedules'
         if (mobileContactText) mobileContactText.textContent = 'Contact'
         if (mobileCriarContaBtn) mobileCriarContaBtn.textContent = 'Sign up'
+        if (mobileEntrar) mobileEntrar.textContent = 'Login'
         if (mobileUsuarioText) mobileUsuarioText.textContent = 'User without account'
         if (mobileEmailText) mobileEmailText.textContent = 'No email'
+        if (entrarTitle) entrarTitle.textContent = 'Login'
+        // FIX: Atualiza apenas o texto, mantendo o link intacto
+        if (jaTemEntrar) {
+            jaTemEntrar.childNodes[0].textContent = "Don't have an account? "
+            if (linkCriarFromEntrar) linkCriarFromEntrar.textContent = "Sign up"
+        }
+        if (entrarEmail) entrarEmail.placeholder = 'Email'
+        if (entrarPasswordInput) entrarPasswordInput.placeholder = 'Enter your password'
+        if (entrarBtnModal) entrarBtnModal.textContent = 'Sign in'
+        if (ouEntrarSpan) ouEntrarSpan.textContent = 'Or sign in with'
+        if (entrarCarrosselSubtitle) entrarCarrosselSubtitle.textContent = 'Exchange, Language and Culture'
+        if (retornarEntrar) retornarEntrar.textContent = 'Return to page'
     }
 
     function trocarEspanhol() {
@@ -196,7 +228,11 @@ document.addEventListener("DOMContentLoaded", function () {
         descobraMundosTitle.textContent = "Descubre mundos con ILC"
         conectandoVoceDesc.textContent = "Conectándote con comunidades culturales vibrantes a través de Intercambio, Lengua y Cultura."
         criarContaTitle.textContent = "Crear una cuenta"
-        jaTemConta.innerHTML = "¿Ya tienes una cuenta? <a href=\"\" class=\"text-gray-200 underline\">Entrar</a>"
+        // FIX: Atualiza apenas o texto, mantendo o link intacto
+        if (jaTemConta) {
+            jaTemConta.childNodes[0].textContent = "¿Ya tienes una cuenta? "
+            if (linkEntrarFromCriar) linkEntrarFromCriar.textContent = "Entrar"
+        }
         nomeInput.placeholder = "Nombre"
         sobrenomeInput.placeholder = "Apellido"
         emailInput.placeholder = "Correo electrónico"
@@ -242,8 +278,21 @@ document.addEventListener("DOMContentLoaded", function () {
         if (mobileSchedulesText) mobileSchedulesText.textContent = 'Horarios'
         if (mobileContactText) mobileContactText.textContent = 'Contacto'
         if (mobileCriarContaBtn) mobileCriarContaBtn.textContent = 'Crear cuenta'
+        if (mobileEntrar) mobileEntrar.textContent = 'Entrar'
         if (mobileUsuarioText) mobileUsuarioText.textContent = 'Usuario sin cuenta'
         if (mobileEmailText) mobileEmailText.textContent = 'Sin correo'
+        if (entrarTitle) entrarTitle.textContent = 'Entrar'
+        // FIX: Atualiza apenas o texto, mantendo o link intacto
+        if (jaTemEntrar) {
+            jaTemEntrar.childNodes[0].textContent = '¿Aún no tienes cuenta? '
+            if (linkCriarFromEntrar) linkCriarFromEntrar.textContent = 'Crear cuenta'
+        }
+        if (entrarEmail) entrarEmail.placeholder = 'Correo electrónico'
+        if (entrarPasswordInput) entrarPasswordInput.placeholder = 'Ingresa tu contraseña'
+        if (entrarBtnModal) entrarBtnModal.textContent = 'Iniciar sesión'
+        if (ouEntrarSpan) ouEntrarSpan.textContent = 'O inicia sesión con'
+        if (entrarCarrosselSubtitle) entrarCarrosselSubtitle.textContent = 'Intercambio, Lengua y Cultura'
+        if (retornarEntrar) retornarEntrar.textContent = 'Volver a la página'
     }
 
     function trocarBr() {
@@ -270,7 +319,11 @@ document.addEventListener("DOMContentLoaded", function () {
         descobraMundosTitle.textContent = "Descubra mundos com ILC"
         conectandoVoceDesc.textContent = "Conectando você a comunidades culturais vibrantes através de Intercâmbio, Linguagem e Cultura."
         criarContaTitle.textContent = "Criar uma conta"
-        jaTemConta.innerHTML = "Já possui uma conta? <a href=\"\" class=\"text-gray-200 underline\">Entrar</a>"
+        // FIX: Atualiza apenas o texto, mantendo o link intacto
+        if (jaTemConta) {
+            jaTemConta.childNodes[0].textContent = "Já possui uma conta? "
+            if (linkEntrarFromCriar) linkEntrarFromCriar.textContent = "Entrar"
+        }
         nomeInput.placeholder = "Nome"
         sobrenomeInput.placeholder = "Sobrenome"
         emailInput.placeholder = "E-mail"
@@ -316,8 +369,21 @@ document.addEventListener("DOMContentLoaded", function () {
         if (mobileSchedulesText) mobileSchedulesText.textContent = 'Cronogramas'
         if (mobileContactText) mobileContactText.textContent = 'Contato'
         if (mobileCriarContaBtn) mobileCriarContaBtn.textContent = 'Criar conta'
+        if (mobileEntrar) mobileEntrar.textContent = 'Entrar'
         if (mobileUsuarioText) mobileUsuarioText.textContent = 'Usuário sem conta'
         if (mobileEmailText) mobileEmailText.textContent = 'Sem e-mail'
+        if (entrarTitle) entrarTitle.textContent = 'Entrar'
+        // FIX: Atualiza apenas o texto, mantendo o link intacto
+        if (jaTemEntrar) {
+            jaTemEntrar.childNodes[0].textContent = 'Ainda não possui conta? '
+            if (linkCriarFromEntrar) linkCriarFromEntrar.textContent = 'Criar conta'
+        }
+        if (entrarEmail) entrarEmail.placeholder = 'E-mail'
+        if (entrarPasswordInput) entrarPasswordInput.placeholder = 'Digite sua senha'
+        if (entrarBtnModal) entrarBtnModal.textContent = 'Entrar'
+        if (ouEntrarSpan) ouEntrarSpan.textContent = 'Ou entrar com'
+        if (entrarCarrosselSubtitle) entrarCarrosselSubtitle.textContent = 'Intercâmbio, Linguagem e Cultura'
+        if (retornarEntrar) retornarEntrar.textContent = 'Retornar à página'
     }
 
     br.onclick = function() {

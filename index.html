@@ -8,8 +8,10 @@
     <script src="assets/js/idioma.js"></script>
     <script src="assets/js/dropdown.js"></script>
     <script src="assets/js/criarConta.js"></script>
+    <script src="assets/js/entrar.js"></script>
     <script src="assets/js/menuMobile.js"></script>
     <script src="assets/js/carrosselmenu.js" defer></script>
+    <script src="assets/js/modalAnimations.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +35,11 @@
 
             <ul class="flex gap-10 max-lg:hidden">
 
-                <li class="cursor-pointer hover:text-gray-300" id="item1"><a href="#about" id="aboutLink">Sobre nós</a></li>
+                <a href="#about">
+                    <li class="cursor-pointer hover:text-gray-300" id="item1"><a href="#about" id="aboutLink">Sobre
+                            nós</a>
+                    </li>
+                </a>
 
                 <li class="cursor-pointer" id="item3">
                     <p class="hover:text-gray-300 flex justify-center items-center gap-3">
@@ -96,7 +102,7 @@
             <!-- carrossel -->
             <!-- carrossel -->
             <div id="carrosselmenu"
-                class="w-full bg-[url(img/machuPichu.jpg)] bg-center bg-cover rounded-xl min-h-[400px] sm:min-h-[500px] flex flex-col">
+                class="carrosselmenu w-full bg-[url(img/machuPichu.jpg)] bg-center bg-cover rounded-xl min-h-[400px] sm:min-h-[500px] flex flex-col">
 
                 <div class="p-4 flex items-center justify-between lg:p-5">
 
@@ -114,24 +120,23 @@
                 <!-- Espaçador para empurrar o conteúdo para baixo -->
                 <div class="flex-grow"></div>
 
-                <p
-                    class="text-center text-2xl sm:text-3xl max-w-[280px] sm:max-w-80 justify-self-center mx-auto lg:text-5xl lg:max-w-120 z-20 font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] px-4 mb-5 sm:mb-8"
+                <p class="text-center text-2xl sm:text-3xl max-w-[280px] sm:max-w-80 justify-self-center mx-auto lg:text-5xl lg:max-w-120 z-20 font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] px-4 mb-5 sm:mb-8"
                     id="carrosselSubtitle">
                     Intercâmbio, Linguagem e Cultura</p>
 
                 <!-- Contador -->
                 <div class="flex justify-center gap-2 max-w-32 sm:max-w-35 mx-auto mb-8 sm:mb-10 lg:mb-5">
 
-                    <div id="barra"
-                        class="w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
+                    <div
+                        class="barra w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
                     </div>
 
-                    <div id="barra"
-                        class="w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
+                    <div
+                        class="barra w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
                     </div>
 
-                    <div id="barra"
-                        class="w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
+                    <div
+                        class="barra w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
                     </div>
 
                 </div>
@@ -139,13 +144,13 @@
             </div>
 
             <!-- Login -->
-            <div class="w-full rounded-xl bg-[#322f43] p-5 lg:flex flex-col justify-center items-center">
+            <div class="w-full rounded-xl bg-[#322f43] p-5 py-16 lg:flex flex-col justify-center items-center">
                 <form action="">
 
-                        <h2 class="text-4xl lg:text-6xl" id="criarContaTitle">Criar uma conta</h2>
+                    <h2 class="text-4xl lg:text-6xl" id="criarContaTitle">Criar uma conta</h2>
 
-                        <p class="mt-3 text-gray-300 lg:text-lg lg:mt-5" id="jaTemConta">Já possui uma conta? <a href=""
-                            class="text-gray-200 underline">Entrar</a></p>
+                    <p class="mt-3 text-gray-300 lg:text-lg lg:mt-5" id="jaTemConta">Já possui uma conta? <a href=""
+                            id="linkEntrarFromCriar" class="text-gray-200 underline">Entrar</a></p>
 
                     <!-- Nome e sobrenome -->
                     <div class="grid grid-cols-2 mt-5 gap-3 w-full lg:mt-10 lg:gap-5">
@@ -180,17 +185,20 @@
                     <!-- Termos -->
                     <div class="flex items-center gap-4 mt-5 text-sm lg:text-base lg:mt-7">
                         <input type="checkbox" name="terms" id="terms">
-                        <label for="terms" id="termsLabel">Eu concordo com os <a href="" class="text-purple-300 underline">Termos e
-                                    Condições</a></label>
+                        <label for="terms" id="termsLabel">Eu concordo com os <a href=""
+                                class="text-purple-300 underline">Termos e
+                                Condições</a></label>
                     </div>
 
                     <button
-                        class="mx-auto shadow-lg rounded-lg w-full py-3 px-5 mt-5 lg:mt-7 bg-[#675d99] text-lg lg:text-xl lg:min-h-15 hover:bg-[#7966d6] cursor-pointer" id="criarContaBtn">Criar
+                        class="mx-auto shadow-lg rounded-lg w-full py-3 px-5 mt-5 lg:mt-7 bg-[#675d99] text-lg lg:text-xl lg:min-h-15 hover:bg-[#7966d6] cursor-pointer"
+                        id="criarContaBtn">Criar
                         conta</button>
 
                     <div class="inline-flex items-center justify-center w-full mt-7 relative lg:mt-10">
                         <hr class="w-full border-gray-400">
-                        <span class="absolute bg-[#322f43] px-5 text-[12px] lg:text-sm text-gray-400" id="ouRegistreComSpan">Ou registre-se
+                        <span class="absolute bg-[#322f43] px-5 text-[12px] lg:text-sm text-gray-400"
+                            id="ouRegistreComSpan">Ou registre-se
                             com</span>
                     </div>
 
@@ -220,9 +228,119 @@
 
     </section>
 
+    <!-- Entrar (login) - modal com layout invertido (formulário à esquerda, carrossel à direita) -->
+    <section
+        class="z-40 fixed h-full w-full flex justify-center items-center -translate-y-full transition-all delay-75 duration-500"
+        id="entrarMenu">
+
+        <!-- container -->
+        <div
+            class="p-5 gap-5 max-lg:h-full max-lg:w-full lg:min-w-350 lg:min-h-150 bg-[#2d2638] grid grid-cols-1 overflow-y-auto lg:grid-cols-2 lg:rounded-xl">
+
+            <!-- Login (form) - esquerda -->
+            <div class="w-full rounded-xl bg-[#322f43] p-5 py-16 lg:flex flex-col justify-center items-center">
+                <form action="">
+
+                    <h2 class="text-4xl lg:text-6xl" id="entrarTitle">Entrar</h2>
+
+                    <p class="mt-3 text-gray-300 lg:text-lg lg:mt-5" id="jaTemEntrar">Ainda não possui conta? <a href=""
+                            id="linkCriarFromEntrar" class="text-gray-200 underline">Criar conta</a></p>
+
+                    <!-- Email -->
+                    <input type="email"
+                        class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 mt-3 max-h-10 text-sm lg:min-h-13 lg:text-base lg:mt-5"
+                        id="entrarEmail" placeholder="E-mail">
+
+                    <!-- Senha -->
+                    <div class="w-full flex mt-5 items-center justify-end relative">
+                        <input type="password"
+                            class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 lg:min-h-13 lg:text-base"
+                            name="password" placeholder="Digite sua senha" id="entrarPasswordInput">
+
+                        <img src="img/visibility.svg" class="absolute py-3 px-5 cursor-pointer" id="entrarVisibility">
+
+                        <img src="img/visibility-off.svg" class="absolute py-3 px-5 cursor-pointer hidden"
+                            id="entrarVisibilityOff">
+                    </div>
+
+                    <button
+                        class="mx-auto shadow-lg rounded-lg w-full py-3 px-5 mt-5 lg:mt-7 bg-[#675d99] text-lg lg:text-xl lg:min-h-15 hover:bg-[#7966d6] cursor-pointer"
+                        id="entrarBtn">Entrar</button>
+
+                    <div class="inline-flex items-center justify-center w-full mt-7 relative lg:mt-10">
+                        <hr class="w-full border-gray-400">
+                        <span class="absolute bg-[#322f43] px-5 text-[12px] lg:text-sm text-gray-400"
+                            id="ouEntrarSpan">Ou entrar com</span>
+                    </div>
+
+                    <div class="flex items-center gap-5 mt-5 lg:mt-10">
+                        <!-- Google -->
+                        <button
+                            class="flex w-[50%] items-center justify-center gap-3 shadow-lg rounded-lg bg-transparent border py-3 px-5 hover:bg-[#675d99]/20 cursor-pointer">
+                            <img class="w-[20px]" src="img/google.png" alt="google">
+                            <p class="pt-1">Google</p>
+                        </button>
+
+                        <!-- Facebook -->
+                        <button
+                            class="flex w-[50%] items-center justify-center gap-3 shadow-lg rounded-lg bg-transparent border py-3 px-5 hover:bg-[#675d99]/20 cursor-pointer">
+                            <img class="w-[20px]" src="img/facebook.png" alt="facebook">
+                            <p class="pt-1">Facebook</p>
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <!-- carrossel - direita -->
+            <div id="entrarCarrossel"
+                class="carrosselmenu w-full bg-[url(img/machuPichu.jpg)] bg-center bg-cover rounded-xl min-h-[400px] sm:min-h-[500px] flex flex-col">
+
+                <div class="p-4 flex items-center justify-between lg:p-5">
+
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl z-20 font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+                        ILC</h2>
+
+                    <button
+                        class="bg-[#e3e3e3]/34 rounded-full py-1 px-3 text-sm sm:text-[15px] cursor-pointer hover:bg-[#e3e3e3]/50 lg:text-lg lg:px-5 lg:py-2 z-20"
+                        id="retornarEntrar">
+                        Retornar à página
+                    </button>
+
+                </div>
+
+                <div class="flex-grow"></div>
+
+                <p class="text-center text-2xl sm:text-3xl max-w-[280px] sm:max-w-80 justify-self-center mx-auto lg:text-5xl lg:max-w-120 z-20 font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] px-4 mb-5 sm:mb-8"
+                    id="entrarCarrosselSubtitle">Intercâmbio, Linguagem e Cultura</p>
+
+                <!-- Contador -->
+                <div class="flex justify-center gap-2 max-w-32 sm:max-w-35 mx-auto mb-8 sm:mb-10 lg:mb-5">
+
+                    <div
+                        class="barra w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
+                    </div>
+
+                    <div
+                        class="barra w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
+                    </div>
+
+                    <div
+                        class="barra w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
     <!-- Menu mobile -->
     <section
-        class="p-10 bg-[#2d2638] h-screen min-w-[80%] fixed right-0 rounded-tl-2xl rounded-bl-2xl transition-all delay-75 duration-500 translate-x-full lg:hidden"
+        class="p-10 z-10 bg-[#2d2638] h-screen min-w-[80%] fixed right-0 rounded-tl-2xl rounded-bl-2xl transition-all delay-75 duration-500 translate-x-full lg:hidden"
         id="menuMobile">
 
         <div class="w-full min-h-20 flex items-center">
@@ -232,11 +350,18 @@
         </div>
 
         <ul class="w-full mt-20 text-xl flex flex-col gap-3">
-
-            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileAbout"><img src="img/about.svg"> <span id="mobileAboutText">Sobre nós</span></li>
-            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileIntercambios"><img src="img/flight.svg"><span id="mobileIntercambiosText">Intercâmbios</span></li>
-            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileSchedules"><img src="img/date.svg"> <span id="mobileSchedulesText">Cronogramas</span></li>
-            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileContact"><img src="img/contact.svg"> <span id="mobileContactText">Contato</span></li>
+            <a href="#about">
+                <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileAbout"><img
+                        src="img/about.svg">
+                    <span id="mobileAboutText">Sobre nós</span>
+                </li>
+            </a>
+            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileIntercambios"><img
+                    src="img/flight.svg"><span id="mobileIntercambiosText">Intercâmbios</span></li>
+            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileSchedules"><img
+                    src="img/date.svg"> <span id="mobileSchedulesText">Cronogramas</span></li>
+            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileContact"><img
+                    src="img/contact.svg"> <span id="mobileContactText">Contato</span></li>
 
         </ul>
 
@@ -266,9 +391,15 @@
             <!-- bottom -->
             <div class="w-full flex justify-center items-center">
 
-                <button class="mt-3 py-3 px-5 w-full text-xl bg-white/5 border rounded-xl m-2" id="mobileCriarContaBtn">
-                    Criar conta
-                </button>
+                <div class="w-full flex flex-col gap-2 p-4">
+                    <button class="py-3 px-5 w-full text-xl bg-white/5 border rounded-xl" id="mobileEntrar">
+                        Entrar
+                    </button>
+
+                    <button class="py-3 px-5 w-full text-xl bg-white/5 border rounded-xl" id="mobileCriarContaBtn">
+                        Criar conta
+                    </button>
+                </div>
 
             </div>
 
@@ -318,23 +449,27 @@
         </section>
 
         <section
-            class="w-full bg-[url('img/america.webp')] bg-cover bg-center h-screen flex max-lg:justify-center items-center"
+            class="w-full bg-[url('img/Aviao.webp')] bg-fixed bg-cover bg-center h-screen flex max-lg:justify-center items-center"
             id="about">
 
             <div class="mb-20 p-10 lg:max-w-180 lg:mx-25">
-                <h2 class="text-6xl lg:text-9xl" id="sobreNosTitle">Sobre nós</h2>
+                <h2 class="text-6xl z-0 lg:text-9xl font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
+                    id="sobreNosTitle">Sobre nós</h2>
 
-                    <p class="text-justify text-2xl/10 lg:text-4xl/12 mt-5" id="sobreNosDesc">ILC - Intercâmbio, Linguagem e Cultura é uma
-                        agência com o objetivo de levar conhecimento, experiências e virtudes para pessoas ao redor do
-                        mundo por meio de intercâmbios culturais na América Latina.</p>
+                <p class="text-justify text-2xl/10 lg:text-4xl/12 mt-5 font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
+                    id="sobreNosDesc">ILC - Intercâmbio, Linguagem e
+                    Cultura é uma
+                    agência com o objetivo de levar conhecimento, experiências e virtudes para pessoas ao redor do
+                    mundo por meio de intercâmbios culturais na América Latina.</p>
             </div>
 
         </section>
 
-        <section class="w-full min-h-screen bg-[#96969c] flex justify-center items-center p-20">
+        <section class="w-full min-h-screen bg-[#2d2d49] flex justify-center items-center p-20">
 
             <div class="flex flex-col gap-20">
-                <h2 class="text-4xl lg:text-6xl text-center min-h-24 lg:min-h-32 flex items-center justify-center" id="comIntercambiosTitle">Com nossos intercâmbios, você adquire:</h2>
+                <h2 class="text-4xl lg:text-6xl text-center min-h-24 lg:min-h-32 flex items-center justify-center"
+                    id="comIntercambiosTitle">Com nossos intercâmbios, você adquire:</h2>
 
                 <!-- itens -->
                 <div class="grid lg:grid-cols-3 gap-10 items-center justify-center">
@@ -343,7 +478,8 @@
                     <div
                         class="min-w-50 min-h-50 lg:max-h-100 aspect-square lg:min-w-70 bg-[url(img/item1.webp)] bg-cover bg-center flex items-center justify-center shadow-2xl bg-[#dfdbd4]">
 
-                        <p class="max-w-80 text-4xl font-semibold text-center line-clamp-3" id="item1Text">conhecimento e experiências
+                        <p class="max-w-80 text-4xl font-semibold text-center line-clamp-3" id="item1Text">conhecimento
+                            e experiências
                             internacionais</p>
 
                     </div>
@@ -352,7 +488,8 @@
                     <div
                         class="min-w-50 min-h-50 lg:max-h-100 aspect-square lg:min-w-70 bg-[url(img/item2.png)] bg-cover bg-center flex items-center justify-center shadow-2xl bg-[#dfdbd4]">
 
-                        <p class="max-w-60 text-4xl font-semibold text-center line-clamp-3" id="item2Text">trocas culturais</p>
+                        <p class="max-w-60 text-4xl font-semibold text-center line-clamp-3" id="item2Text">trocas
+                            culturais</p>
 
                     </div>
 
@@ -360,13 +497,15 @@
                     <div
                         class="min-w-50 min-h-50 lg:max-h-100 aspect-square lg:min-w-70 bg-[url(img/item3.png)] bg-cover bg-center flex items-center justify-center shadow-2xl">
 
-                        <p class="max-w-50 text-4xl font-semibold text-center line-clamp-3" id="item3Text">conexão ancestral</p>
+                        <p class="max-w-50 text-4xl font-semibold text-center line-clamp-3" id="item3Text">conexão
+                            ancestral</p>
 
                     </div>
 
                 </div>
 
-                <p class="text-center mx-auto text-lg min-w-100 lg:max-w-200 lg:text-3xl line-clamp-4 min-h-20 lg:min-h-28 flex items-center justify-center" id="respeitamosText">Respeitamos todas as
+                <p class="text-center mx-auto text-lg min-w-100 lg:max-w-200 lg:text-3xl line-clamp-4 min-h-20 lg:min-h-28 flex items-center justify-center"
+                    id="respeitamosText">Respeitamos todas as
                     identidades e culturas. Nosso espaço é seguro e acolhedor para todas as pessoas.</p>
 
             </div>
@@ -383,9 +522,11 @@
             <!-- Container -->
             <section class="w-full flex justify-center items-center">
                 <div>
-                    <h2 class="text-5xl lg:text-6xl text-center mt-20 font-bold" id="descobraMundosTitle">Descubra mundos com ILC</h2>
+                    <h2 class="text-5xl lg:text-6xl text-center mt-20 font-bold" id="descobraMundosTitle">Descubra
+                        mundos com ILC</h2>
 
-                    <p class="text-gray-500 text-center mt-10 lg:text-2xl lg:max-w-200 mx-auto" id="conectandoVoceDesc">Conectando você a
+                    <p class="text-gray-500 text-center mt-10 lg:text-2xl lg:max-w-200 mx-auto" id="conectandoVoceDesc">
+                        Conectando você a
                         comunidades
                         culturais vibrantes através de Intercâmbio, Linguagem e Cultura.</p>
 
@@ -402,7 +543,8 @@
 
                                 <img src="img/travel.svg">
 
-                                <h2 class="text-stone-800 text-xl font-bold mt-2" id="card1Title">Quilombas | 15 dias</h2>
+                                <h2 class="text-stone-800 text-xl font-bold mt-2" id="card1Title">Quilombas | 15 dias
+                                </h2>
                                 <p class="text-stone-800 text-sm mt-1" id="card1Country">Brasil</p>
 
                                 <p class="text-stone-800 mt-5"><span id="card1Ida">Ida</span> 01/12/2025</p>
@@ -413,7 +555,8 @@
 
                                 <hr class="mt-10 border-black">
 
-                                <p class="text-stone-800 mt-3 text-center text-sm font-semibold" id="card1Install">Em até 15x sem juros
+                                <p class="text-stone-800 mt-3 text-center text-sm font-semibold" id="card1Install">Em
+                                    até 15x sem juros
                                 </p>
                             </div>
 
@@ -439,7 +582,8 @@
 
                                 <hr class="mt-10 border-black">
 
-                                <p class="text-stone-800 mt-3 text-center text-sm font-semibold" id="card2Install">Em até 15x sem juros
+                                <p class="text-stone-800 mt-3 text-center text-sm font-semibold" id="card2Install">Em
+                                    até 15x sem juros
                                 </p>
                             </div>
 
@@ -465,7 +609,8 @@
 
                                 <hr class="mt-10 border-black">
 
-                                <p class="text-stone-800 mt-3 text-center text-sm font-semibold" id="card3Install">Em até 15x sem juros
+                                <p class="text-stone-800 mt-3 text-center text-sm font-semibold" id="card3Install">Em
+                                    até 15x sem juros
                                 </p>
                             </div>
 
@@ -491,7 +636,8 @@
 
                                 <hr class="mt-10 border-black">
 
-                                <p class="text-stone-800 mt-3 text-center text-sm font-semibold" id="card4Install">Em até 15x sem juros
+                                <p class="text-stone-800 mt-3 text-center text-sm font-semibold" id="card4Install">Em
+                                    até 15x sem juros
                                 </p>
                             </div>
 
@@ -517,7 +663,8 @@
 
                                 <hr class="mt-10 border-black">
 
-                                <p class="text-stone-800 mt-3 text-center text-sm font-semibold" id="card5Install">Em até 15x sem juros
+                                <p class="text-stone-800 mt-3 text-center text-sm font-semibold" id="card5Install">Em
+                                    até 15x sem juros
                                 </p>
                             </div>
 
