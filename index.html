@@ -9,7 +9,9 @@
     <script src="assets/js/dropdown.js"></script>
     <script src="assets/js/criarConta.js"></script>
     <script src="assets/js/menuMobile.js"></script>
-    <script src="assets/js/carrosselmenu.js" defer></script>
+    <script src="assets/js/carrosselmenu.js"></script>
+    <script src="assets/js/modalAnimations.js"></script>
+    <script src="assets/js/entrar.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,9 +45,10 @@
 
     <div class="fixed w-full h-screen transition-all delay-75 duration-500 pointer-events-none" id="blackscreen"></div>
 
-    <header class="z-10 fixed w-full p-10 min-h-20 flex items-center justify-between md:text-xl transition duration-500"
+    <header
+        class="z-[10000] fixed w-full p-10 min-h-20 flex items-center justify-between md:text-xl transition duration-500"
         id="header">
-        <nav class="flex gap-20">
+        <nav class="flex gap-20 items-center">
             <a href="index.html" class="text-3xl transition-all delay-75 duration-500" id="logo">ILC</a>
             <ul class="flex gap-10 max-lg:hidden">
                 <li class="cursor-pointer hover:text-gray-300" id="item1"><a href="#about" id="aboutLink">Sobre nós</a>
@@ -56,8 +59,8 @@
                                 href="#inter">Intercâmbios</a></span>
                     </p>
                 </li>
-                <li class="cursor-pointer hover:text-gray-300" id="item2">Cronogramas</li>
-                <li class="cursor-pointer hover:text-gray-300" id="item4">Contato</li>
+                <li class="cursor-pointer hover:text-gray-300" id="item4"><a href="#contact"
+                        id="contactLinkHeader">Contato</a></li>
             </ul>
         </nav>
         <div class="flex gap-5 items-center justify-center max-lg:hidden md:text-xl">
@@ -71,135 +74,345 @@
                 class="bg-black/30 p-3 lg:p-4 min-w-41 rounded-xl hover:bg-black/50 cursor-pointer transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md"
                 id="criarConta">Criar conta</button>
         </div>
-        <div class="lg:hidden z-40" id="list">
+        <div class="lg:hidden flex items-center" id="list">
             <img src="img/icon-menu.svg">
         </div>
     </header>
 
     <!-- Menu de criar Conta -->
     <section
-        class="z-40 fixed h-full w-full flex justify-center items-center -translate-y-full transition-all delay-75 duration-500"
+        class="z-40 fixed h-full w-full flex justify-center items-center -translate-y-full transition-all delay-75 duration-500 lg:p-4"
         id="criarContaMenu">
+
+        <!-- container -->
         <div
-            class="p-5 gap-5 max-lg:h-full max-lg:w-full lg:min-w-350 lg:min-h-150 bg-[#2d2638] grid grid-cols-1 overflow-y-auto lg:grid-cols-2 lg:rounded-xl">
+            class="p-5 gap-5 max-lg:h-full max-lg:w-full lg:min-w-350 lg:max-h-[90vh] bg-[#2d2638] grid grid-cols-1 overflow-y-auto lg:grid-cols-2 lg:rounded-xl">
+
+            <!-- carrossel -->
+            <!-- carrossel -->
+            <!-- carrossel -->
             <div id="carrosselmenu"
-                class="w-full bg-[url(img/machuPichu.jpg)] bg-center bg-cover rounded-xl min-h-[400px] sm:min-h-[500px] flex flex-col">
+                class="carrosselmenu w-full bg-[url(img/machuPichu.jpg)] bg-center bg-cover rounded-xl min-h-[400px] sm:min-h-[500px] flex flex-col">
+
                 <div class="p-4 flex items-center justify-between lg:p-5">
-                    <div class="flex-grow"></div>
-                    <p class="text-center text-2xl sm:text-3xl max-w-[280px] sm:max-w-80 justify-self-center mx-auto lg:text-5xl lg:max-w-120 z-20 font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] px-4 mb-5 sm:mb-8"
-                        id="carrosselSubtitle">Intercâmbio, Linguagem e Cultura</p>
-                    <div class="flex justify-center gap-2 max-w-32 sm:max-w-35 mx-auto mb-8 sm:mb-10 lg:mb-5">
-                        <div id="barra"
-                            class="w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
-                        </div>
-                        <div id="barra"
-                            class="w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
-                        </div>
-                        <div id="barra"
-                            class="w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
-                        </div>
+
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl z-20 font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+                        ILC</h2>
+
+                    <button
+                        class="bg-[#e3e3e3]/34 rounded-full py-1 px-3 text-sm sm:text-[15px] cursor-pointer hover:bg-[#e3e3e3]/50 lg:text-lg lg:px-5 lg:py-2 z-20"
+                        id="retornar">
+                        Retornar à página
+                    </button>
+
+                </div>
+
+                <!-- Espaçador para empurrar o conteúdo para baixo -->
+                <div class="flex-grow"></div>
+
+                <p class="text-center text-2xl sm:text-3xl max-w-[280px] sm:max-w-80 justify-self-center mx-auto lg:text-5xl lg:max-w-120 z-20 font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] px-4 mb-5 sm:mb-8"
+                    id="carrosselSubtitle">
+                    Intercâmbio, Linguagem e Cultura</p>
+
+                <!-- Contador -->
+                <div class="flex justify-center gap-2 max-w-32 sm:max-w-35 mx-auto mb-8 sm:mb-10 lg:mb-5">
+
+                    <div
+                        class="barra w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
                     </div>
+
+                    <div
+                        class="barra w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
+                    </div>
+
+                    <div
+                        class="barra w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
+                    </div>
+
                 </div>
-                <!-- Login Form -->
-                <div class="w-full rounded-xl bg-[#322f43] p-5 lg:flex flex-col justify-center items-center">
-                    <form action="">
-                        <h2 class="text-4xl lg:text-6xl" id="criarContaTitle">Criar uma conta</h2>
-                        <p class="mt-3 text-gray-300 lg:text-lg lg:mt-5" id="jaTemConta">Já possui uma conta? <a href=""
-                                class="text-gray-200 underline">Entrar</a></p>
-                        <div class="grid grid-cols-2 mt-5 gap-3 w-full lg:mt-10 lg:gap-5">
-                            <input type="text"
-                                class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 max-h-10 text-sm lg:min-h-13 lg:text-base"
-                                name="nome" id="nome" placeholder="Nome">
-                            <input type="text"
-                                class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 max-h-10 text-sm lg:min-h-13 lg:text-base"
-                                name="sobrenome" id="sobrenome" placeholder="Sobrenome">
-                        </div>
-                        <input type="email"
-                            class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 mt-3 max-h-10 text-sm lg:min-h-13 lg:text-base lg:mt-5"
-                            id="email" placeholder="E-mail">
-                        <div class="w-full flex mt-5 items-center justify-end relative">
-                            <input type="password"
-                                class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 lg:min-h-13 lg:text-base"
-                                name="password" placeholder="Digite sua senha" id="passwordInput">
-                            <img src="img/visibility.svg" class="absolute py-3 px-5 cursor-pointer" id="visibility">
-                            <img src="img/visibility-off.svg" class="absolute py-3 px-5 cursor-pointer hidden"
-                                id="visibilityOff">
-                        </div>
-                        <div class="flex items-center gap-4 mt-5 text-sm lg:text-base lg:mt-7">
-                            <input type="checkbox" name="terms" id="terms">
-                            <label for="terms" id="termsLabel">Eu concordo com os <a href=""
-                                    class="text-purple-300 underline">Termos e Condições</a></label>
-                        </div>
-                        <button
-                            class="mx-auto shadow-lg rounded-lg w-full py-3 px-5 mt-5 lg:mt-7 bg-[#675d99] text-lg lg:text-xl lg:min-h-15 hover:bg-[#7966d6] cursor-pointer"
-                            id="criarContaBtn">Criar conta</button>
-                        <div class="inline-flex items-center justify-center w-full mt-7 relative lg:mt-10">
-                            <hr class="w-full border-gray-400">
-                            <span class="absolute bg-[#322f43] px-5 text-[12px] lg:text-sm text-gray-400"
-                                id="ouRegistreComSpan">Ou registre-se com</span>
-                        </div>
-                        <div class="flex items-center gap-5 mt-5 lg:mt-10">
-                            <button
-                                class="flex w-[50%] items-center justify-center gap-3 shadow-lg rounded-lg bg-transparent border py-3 px-5 hover:bg-[#675d99]/20 cursor-pointer">
-                                <img class="w-[20px]" src="img/google.png" alt="google">
-                                <p class="pt-1">Google</p>
-                            </button>
-                            <button
-                                class="flex w-[50%] items-center justify-center gap-3 shadow-lg rounded-lg bg-transparent border py-3 px-5 hover:bg-[#675d99]/20 cursor-pointer">
-                                <img class="w-[20px]" src="img/facebook.png" alt="google">
-                                <p class="pt-1">Facebook</p>
-                            </button>
-                        </div>
-                    </form>
-                </div>
+
             </div>
+
+            <!-- Login -->
+            <div class="w-full rounded-xl bg-[#322f43] p-5 py-16 lg:flex flex-col justify-center items-center">
+                <form action="">
+
+                    <h2 class="text-4xl lg:text-6xl" id="criarContaTitle">Criar uma conta</h2>
+
+                    <p class="mt-3 text-gray-300 lg:text-lg lg:mt-5"><span id="jaTemConta">Já possui uma conta?</span>
+                        <a href="" id="linkEntrarFromCriar" class="text-gray-200 underline"><span
+                                id="linkEntrarFromCriarText">Entrar</span></a>
+                    </p>
+
+                    <!-- Nome e sobrenome -->
+                    <div class="grid grid-cols-2 mt-5 gap-3 w-full lg:mt-10 lg:gap-5">
+
+                        <input type="text"
+                            class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 max-h-10 text-sm lg:min-h-13 lg:text-base"
+                            name="nome" id="nome" placeholder="Nome">
+
+                        <input type="text"
+                            class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 max-h-10 text-sm lg:min-h-13 lg:text-base"
+                            name="sobrenome" id="sobrenome" placeholder="Sobrenome">
+
+                    </div>
+
+                    <!-- Email -->
+                    <input type="email"
+                        class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 mt-3 max-h-10 text-sm lg:min-h-13 lg:text-base lg:mt-5"
+                        id="email" placeholder="E-mail">
+
+                    <!-- Senha -->
+                    <div class="w-full flex mt-5 items-center justify-end relative">
+                        <input type="password"
+                            class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 lg:min-h-13 lg:text-base"
+                            name="password" placeholder="Digite sua senha" id="passwordInput">
+
+                        <img src="img/visibility.svg" class="absolute py-3 px-5 cursor-pointer" id="visibility">
+
+                        <img src="img/visibility-off.svg" class="absolute py-3 px-5 cursor-pointer hidden"
+                            id="visibilityOff">
+                    </div>
+
+                    <!-- Termos -->
+                    <div class="flex items-center gap-4 mt-5 text-sm lg:text-base lg:mt-7">
+                        <input type="checkbox" name="terms" id="terms">
+                        <label for="terms" id="termsLabel">Eu concordo com os <a href=""
+                                class="text-purple-300 underline">Termos e
+                                Condições</a></label>
+                    </div>
+
+                    <button
+                        class="mx-auto shadow-lg rounded-lg w-full py-3 px-5 mt-5 lg:mt-7 bg-[#675d99] text-lg lg:text-xl lg:min-h-15 hover:bg-[#7966d6] cursor-pointer"
+                        id="criarContaBtn">Criar
+                        conta</button>
+
+                    <div class="inline-flex items-center justify-center w-full mt-7 relative lg:mt-10">
+                        <hr class="w-full border-gray-400">
+                        <span class="absolute bg-[#322f43] px-5 text-[12px] lg:text-sm text-gray-400"
+                            id="ouRegistreComSpan">Ou registre-se
+                            com</span>
+                    </div>
+
+                    <div class="flex items-center gap-5 mt-5 lg:mt-10">
+
+                        <!-- Google -->
+                        <button
+                            class="flex w-[50%] items-center justify-center gap-3 shadow-lg rounded-lg bg-transparent border py-3 px-5 hover:bg-[#675d99]/20 cursor-pointer">
+                            <img class="w-[20px]" src="img/google.png" alt="google">
+                            <p class="pt-1">Google</p>
+                        </button>
+
+                        <!-- Facebook -->
+                        <button
+                            class="flex w-[50%] items-center justify-center gap-3 shadow-lg rounded-lg bg-transparent border py-3 px-5 hover:bg-[#675d99]/20 cursor-pointer">
+                            <img class="w-[20px]" src="img/facebook.png" alt="google">
+                            <p class="pt-1">Facebook</p>
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
         </div>
+
+    </section>
+
+    <!-- Entrar (login) - modal com layout invertido (formulário à esquerda, carrossel à direita) -->
+    <section
+        class="z-40 fixed h-full w-full flex justify-center items-center -translate-y-full transition-all delay-75 duration-500 lg:p-4"
+        id="entrarMenu">
+
+        <!-- container -->
+        <div
+            class="p-5 gap-5 max-lg:h-full max-lg:w-full lg:min-w-350 lg:max-h-[90vh] bg-[#2d2638] grid grid-cols-1 overflow-y-auto lg:grid-cols-2 lg:rounded-xl">
+
+            <!-- Login (form) - esquerda -->
+            <div class="w-full rounded-xl bg-[#322f43] p-5 py-16 lg:flex flex-col justify-center items-center">
+                <form action="">
+
+                    <h2 class="text-4xl lg:text-6xl" id="entrarTitle">Entrar</h2>
+
+                    <p class="mt-3 text-gray-300 lg:text-lg lg:mt-5"><span id="jaTemEntrar">Ainda não possui
+                            conta?</span> <a href="" id="linkCriarFromEntrar" class="text-gray-200 underline"><span
+                                id="linkCriarFromEntrarText">Criar conta</span></a></p>
+
+                    <!-- Email -->
+                    <input type="email"
+                        class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 mt-3 max-h-10 text-sm lg:min-h-13 lg:text-base lg:mt-5"
+                        id="entrarEmail" placeholder="E-mail">
+
+                    <!-- Senha -->
+                    <div class="w-full flex mt-5 items-center justify-end relative">
+                        <input type="password"
+                            class="shadow-lg rounded-lg bg-[#483d5b] w-full py-3 px-5 lg:min-h-13 lg:text-base"
+                            name="password" placeholder="Digite sua senha" id="entrarPasswordInput">
+
+                        <img src="img/visibility.svg" class="absolute py-3 px-5 cursor-pointer" id="entrarVisibility">
+
+                        <img src="img/visibility-off.svg" class="absolute py-3 px-5 cursor-pointer hidden"
+                            id="entrarVisibilityOff">
+                    </div>
+
+                    <button
+                        class="mx-auto shadow-lg rounded-lg w-full py-3 px-5 mt-5 lg:mt-7 bg-[#675d99] text-lg lg:text-xl lg:min-h-15 hover:bg-[#7966d6] cursor-pointer"
+                        id="entrarBtn"><span id="entrarBtnText">Entrar</span></button>
+
+                    <div class="inline-flex items-center justify-center w-full mt-7 relative lg:mt-10">
+                        <hr class="w-full border-gray-400">
+                        <span class="absolute bg-[#322f43] px-5 text-[12px] lg:text-sm text-gray-400"
+                            id="ouEntrarSpan">Ou entrar com</span>
+                    </div>
+
+                    <div class="flex items-center gap-5 mt-5 lg:mt-10">
+                        <!-- Google -->
+                        <button
+                            class="flex w-[50%] items-center justify-center gap-3 shadow-lg rounded-lg bg-transparent border py-3 px-5 hover:bg-[#675d99]/20 cursor-pointer">
+                            <img class="w-[20px]" src="img/google.png" alt="google">
+                            <p class="pt-1">Google</p>
+                        </button>
+
+                        <!-- Facebook -->
+                        <button
+                            class="flex w-[50%] items-center justify-center gap-3 shadow-lg rounded-lg bg-transparent border py-3 px-5 hover:bg-[#675d99]/20 cursor-pointer">
+                            <img class="w-[20px]" src="img/facebook.png" alt="facebook">
+                            <p class="pt-1">Facebook</p>
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <!-- carrossel - direita -->
+            <div id="entrarCarrossel"
+                class="carrosselmenu w-full bg-[url(img/machuPichu.jpg)] bg-center bg-cover rounded-xl min-h-[400px] sm:min-h-[500px] flex flex-col">
+
+                <div class="p-4 flex items-center justify-between lg:p-5">
+
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl z-20 font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+                        ILC</h2>
+
+                    <button
+                        class="bg-[#e3e3e3]/34 rounded-full py-1 px-3 text-sm sm:text-[15px] cursor-pointer hover:bg-[#e3e3e3]/50 lg:text-lg lg:px-5 lg:py-2 z-20"
+                        id="retornarEntrar">
+                        Retornar à página
+                    </button>
+
+                </div>
+
+                <div class="flex-grow"></div>
+
+                <p class="text-center text-2xl sm:text-3xl max-w-[280px] sm:max-w-80 justify-self-center mx-auto lg:text-5xl lg:max-w-120 z-20 font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] px-4 mb-5 sm:mb-8"
+                    id="entrarCarrosselSubtitle">Intercâmbio, Linguagem e Cultura</p>
+
+                <!-- Contador -->
+                <div class="flex justify-center gap-2 max-w-32 sm:max-w-35 mx-auto mb-8 sm:mb-10 lg:mb-5">
+
+                    <div
+                        class="barra w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
+                    </div>
+
+                    <div
+                        class="barra w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
+                    </div>
+
+                    <div
+                        class="barra w-10 h-2 sm:min-w-8 sm:min-h-1.5 lg:min-w-10 lg:min-h-2 rounded-full bg-[#b4b4b4] z-20 flex-shrink-0">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
 
     <!-- Menu mobile -->
     <section
-        class="p-10 bg-[#2d2638] h-screen min-w-[80%] fixed right-0 rounded-tl-2xl rounded-bl-2xl transition-all delay-75 duration-500 translate-x-full lg:hidden"
+        class="p-10 z-[9999] bg-[#2d2638] h-screen min-w-[80%] fixed right-0 rounded-tl-2xl rounded-bl-2xl transition-all delay-75 duration-500 translate-x-full lg:hidden"
         id="menuMobile">
-        <div class="w-full min-h-20 flex items-center">
+
+        <div class="w-full">
+
             <p class="text-3xl -translate-y-200 transition-all delay-75 duration-500" id="menuMobileLogo">ILC</p>
+
         </div>
+
         <ul class="w-full mt-20 text-xl flex flex-col gap-3">
-            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileAbout"><img
-                    src="img/about.svg"><span id="mobileAboutText">Sobre nós</span></li>
-            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileIntercambios"><img
-                    src="img/flight.svg"><span id="mobileIntercambiosText">Intercâmbios</span></li>
-            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileSchedules"><img
-                    src="img/date.svg"> <span id="mobileSchedulesText">Cronogramas</span></li>
-            <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileContact"><img
-                    src="img/contact.svg"> <span id="mobileContactText">Contato</span></li>
+            <a href="#about" class="mobile-menu-link">
+                <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileAbout"><img
+                        src="img/about.svg">
+                    <span id="mobileAboutText">Sobre nós</span>
+                </li>
+            </a>
+            <a href="#inter" class="mobile-menu-link">
+                <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileIntercambios"><img
+                        src="img/flight.svg"><span id="mobileIntercambiosText">Intercâmbios</span></li>
+            </a>
+            <a href="#contact" class="mobile-menu-link">
+                <li class="p-3 rounded-xl flex gap-4 items-center bg-[#322f43]" id="mobileContact"><img
+                        src="img/contact.svg"> <span id="mobileContactText">Contato</span></li>
+            </a>
+
         </ul>
+
         <hr class="mt-10 border-[#3e3e3e]">
+
+        <!-- perfil -->
         <div class="mt-10 w-full rounded-xl bg-[#322f43]">
+
+            <!-- top -->
             <div class="flex justify-between items-center p-5">
-                <div class="max-w-10"><img src="img/no pfp.jpg" class="rounded-full"></div>
+
+                <!-- pfp -->
+                <div class="max-w-10">
+                    <img src="img/no pfp.jpg" class="rounded-full">
+                </div>
+
+                <!-- Nickname -->
                 <div class="px-3">
                     <h3 class id="mobileUsuarioText">Usuário sem conta</h3>
                     <p class="text-[10px] text-gray-400" id="mobileEmailText">Sem e-mail</p>
                 </div>
+
                 <p class="text-2xl">ILC</p>
+
             </div>
+
+            <!-- bottom -->
             <div class="w-full flex justify-center items-center">
-                <button class="mt-3 py-3 px-5 w-full text-xl bg-white/5 border rounded-xl m-2"
-                    id="mobileCriarContaBtn">Criar conta</button>
+
+                <div class="w-full flex flex-col gap-2 p-4">
+                    <button class="py-3 px-5 w-full text-xl bg-white/5 border rounded-xl" id="mobileEntrar">
+                        Entrar
+                    </button>
+
+                    <button class="py-3 px-5 w-full text-xl bg-white/5 border rounded-xl" id="mobileCriarContaBtn">
+                        Criar conta
+                    </button>
+                </div>
+
             </div>
+
         </div>
+
     </section>
 
     <!-- Troca de idioma Mobile -->
-    <div class="fixed lg:hidden max-lg:bottom-5 max-lg:left-5">
-        <img src="img/BR-icon.png" alt="pt-br" class="max-w-10 cursor-pointer" id="brMobile">
-        <img src="img/USA-icon.png" alt="en" class="max-w-10 cursor-pointer hidden" id="enMobile">
-        <img src="img/SPAIN-icon.png" alt="spn" class="max-w-10 cursor-pointer hidden" id="spanishMobile">
+    <div class="fixed lg:hidden max-lg:bottom-5 max-lg:left-5 transition-opacity duration-300"
+        id="idiomaMobileContainer">
+        <img src="img/BR-icon.png" alt="pt-br" class="max-w-10 z-20 cursor-pointer" id="brMobile">
+        <img src="img/USA-icon.png" alt="en" class="max-w-10 z-20 cursor-pointer hidden" id="enMobile">
+        <img src="img/SPAIN-icon.png" alt="spn" class="max-w-10 z-20 cursor-pointer hidden" id="spanishMobile">
     </div>
 
     <!-- Retornar ao topo -->
     <a href="#home" class="cursor-pointer" id="topo">
-        <img src="img/arrow-up.svg" class="fixed bottom-5 right-5 max-w-10 bg-slate-300/30 border-2 rounded-full p-1">
+        <img src="img/arrow-up.svg" class="fixed bottom-5 z-20 right-5 max-w-10 bg-slate-300/30 border-2 rounded-full p-1">
     </a>
 
     <main>
@@ -220,42 +433,68 @@
 
         <!-- Sobre Nós -->
         <section
-            class="w-full bg-[url('img/america.webp')] bg-cover bg-center h-screen flex max-lg:justify-center items-center"
+            class="w-full bg-[url('img/Aviao.webp')] bg-fixed bg-cover bg-center h-screen flex max-lg:justify-center items-center"
             id="about">
+
             <div class="mb-20 p-10 lg:max-w-180 lg:mx-25">
-                <h2 class="text-6xl lg:text-9xl animate-fade-in-up" id="sobreNosTitle">Sobre nós</h2>
-                <p class="text-justify text-2xl/10 lg:text-4xl/12 mt-5 animate-fade-in-up" id="sobreNosDesc">ILC -
-                    Intercâmbio, Linguagem e Cultura é uma agência com o objetivo de levar conhecimento, experiências e
-                    virtudes para pessoas ao redor do mundo por meio de intercâmbios culturais na América Latina.</p>
+                <h2 class="text-6xl z-0 lg:text-9xl font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
+                    id="sobreNosTitle">Sobre nós</h2>
+
+                <p class="text-justify text-2xl/10 lg:text-4xl/12 mt-5 font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
+                    id="sobreNosDesc">ILC - Intercâmbio, Linguagem e
+                    Cultura é uma
+                    agência com o objetivo de levar conhecimento, experiências e virtudes para pessoas ao redor do
+                    mundo por meio de intercâmbios culturais na América Latina.</p>
             </div>
+
         </section>
 
         <!-- Com nossos intercâmbios -->
-        <section class="w-full min-h-screen bg-[#96969c] flex justify-center items-center p-20">
+        <section class="w-full min-h-screen bg-[#2d2d49] flex justify-center items-center p-20">
+
             <div class="flex flex-col gap-20">
                 <h2 class="text-4xl lg:text-6xl text-center min-h-24 lg:min-h-32 flex items-center justify-center"
                     id="comIntercambiosTitle">Com nossos intercâmbios, você adquire:</h2>
+
+                <!-- itens -->
                 <div class="grid lg:grid-cols-3 gap-10 items-center justify-center">
+
+                    <!-- item 1 -->
                     <div
                         class="min-w-50 min-h-50 lg:max-h-100 aspect-square lg:min-w-70 bg-[url(img/item1.webp)] bg-cover bg-center flex items-center justify-center shadow-2xl bg-[#dfdbd4]">
+
                         <p class="max-w-80 text-4xl font-semibold text-center line-clamp-3" id="item1Text">conhecimento
-                            e experiências internacionais</p>
+                            e experiências
+                            internacionais</p>
+
                     </div>
+
+                    <!-- item 2 -->
                     <div
                         class="min-w-50 min-h-50 lg:max-h-100 aspect-square lg:min-w-70 bg-[url(img/item2.png)] bg-cover bg-center flex items-center justify-center shadow-2xl bg-[#dfdbd4]">
+
                         <p class="max-w-60 text-4xl font-semibold text-center line-clamp-3" id="item2Text">trocas
                             culturais</p>
+
                     </div>
+
+                    <!-- item 3 -->
                     <div
                         class="min-w-50 min-h-50 lg:max-h-100 aspect-square lg:min-w-70 bg-[url(img/item3.png)] bg-cover bg-center flex items-center justify-center shadow-2xl">
+
                         <p class="max-w-50 text-4xl font-semibold text-center line-clamp-3" id="item3Text">conexão
                             ancestral</p>
+
                     </div>
+
                 </div>
+
                 <p class="text-center mx-auto text-lg min-w-100 lg:max-w-200 lg:text-3xl line-clamp-4 min-h-20 lg:min-h-28 flex items-center justify-center"
-                    id="respeitamosText">Respeitamos todas as identidades e culturas. Nosso espaço é seguro e acolhedor
-                    para todas as pessoas.</p>
+                    id="respeitamosText">Respeitamos todas as
+                    identidades e culturas. Nosso espaço é seguro e acolhedor para todas as pessoas.</p>
+
             </div>
+
         </section>
 
         <!-- Intercâmbios -->
@@ -360,6 +599,90 @@
                     </section>
                 </div>
             </section>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section id="contact" class="bg-[#2d2638] py-20 px-6 md:px-20">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 animate-fade-in-up">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4" id="contactTitle">Entre em contato</h2>
+                    <p class="text-gray-300 text-lg max-w-2xl mx-auto" id="contactDesc">Estamos prontos para ajudar você
+                        a planejar sua próxima aventura cultural.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Informações -->
+                    <div class="space-y-8 animate-fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-[#675d99] p-3 rounded-lg text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-1" id="contactEmailLabel">E-mail</h3>
+                                <p class="text-gray-300">contato@ilc.com</p>
+                                <p class="text-gray-300">suporte@ilc.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="bg-[#675d99] p-3 rounded-lg text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-1" id="contactPhoneLabel">Telefone</h3>
+                                <p class="text-gray-300">+55 (11) 99999-9999</p>
+                                <p class="text-gray-300">+55 (11) 3333-3333</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="bg-[#675d99] p-3 rounded-lg text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-1" id="contactAddressLabel">Endereço</h3>
+                                <p class="text-gray-300">Av. Paulista, 1000 - Bela Vista</p>
+                                <p class="text-gray-300">São Paulo - SP, Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulário -->
+                    <form class="bg-[#322f43] p-8 rounded-2xl shadow-lg animate-fade-in-up"
+                        style="animation-delay: 0.4s;">
+                        <div class="mb-6">
+                            <input type="text" id="formNameInput" placeholder="Seu nome"
+                                class="w-full bg-[#483d5b] text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#675d99] transition-all">
+                        </div>
+                        <div class="mb-6">
+                            <input type="email" id="formEmailInput" placeholder="Seu e-mail"
+                                class="w-full bg-[#483d5b] text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#675d99] transition-all">
+                        </div>
+                        <div class="mb-6">
+                            <textarea id="formMessageInput" rows="4" placeholder="Sua mensagem"
+                                class="w-full bg-[#483d5b] text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#675d99] transition-all resize-none"></textarea>
+                        </div>
+                        <button type="submit" id="formSendBtn"
+                            class="w-full bg-[#675d99] hover:bg-[#7966d6] text-white font-bold py-3 rounded-lg transition-all duration-300 transform hover:scale-[1.02] shadow-lg">
+                            Enviar mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
         </section>
 
         <footer class="bg-slate-900 text-white py-8">

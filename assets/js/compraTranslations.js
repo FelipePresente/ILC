@@ -18,7 +18,9 @@ const compraTranslations = {
         "compra-total": "Valor final",
         "compra-book-now": "Reservar Agora",
         "compra-footer": "Copyright © 2025 ILC - Intercâmbio, Linguagem e Cultura",
-        "compra-travelers-label": "Viajantes"
+        "compra-travelers-label": "Viajantes",
+        "loadingText": "Aguarde um instante",
+        "loginNotificationText": "É necessário estar logado para reservar"
     },
     en: {
         "compra-about": "About us",
@@ -39,7 +41,9 @@ const compraTranslations = {
         "compra-total": "Total price",
         "compra-book-now": "Book Now",
         "compra-footer": "Copyright © 2025 ILC - Exchange, Language and Culture",
-        "compra-travelers-label": "Travelers"
+        "compra-travelers-label": "Travelers",
+        "loadingText": "Please wait a moment",
+        "loginNotificationText": "You need to be logged in to book"
     },
     es: {
         "compra-about": "Sobre nosotros",
@@ -60,7 +64,9 @@ const compraTranslations = {
         "compra-total": "Precio final",
         "compra-book-now": "Reservar Ahora",
         "compra-footer": "Copyright © 2025 ILC - Intercambio, Lengua y Cultura",
-        "compra-travelers-label": "Viajeros"
+        "compra-travelers-label": "Viajeros",
+        "loadingText": "Espere un momento",
+        "loginNotificationText": "Necesitas estar conectado para reservar"
     }
 };
 

@@ -12,26 +12,60 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuMobile = document.querySelector("#menuMobile")
     const menuMobileLogo = document.querySelector("#menuMobileLogo")
     const logo = document.querySelector("#logo")
+    const entrarMenu = document.querySelector("#entrarMenu")
+    const header = document.querySelector("#header")
+
+    // Função para abrir o modal Criar Conta
+    function openCriarContaModal() {
+        criarContaMenu.classList.remove("-translate-y-full")
+        criarContaMenu.style.visibility = 'visible'
+        criarContaMenu.style.pointerEvents = 'auto'
+        criarContaMenu.style.transform = ''
+        body.classList.add("overflow-hidden")
+        blackscreen.classList.add("bg-black/60")
+        blackscreen.classList.add("z-0")
+
+        // Ocultar header no mobile
+        if (header && window.innerWidth < 1024) {
+            header.style.opacity = '0'
+            header.style.pointerEvents = 'none'
+        }
+
+        // Garante que entrar está escondido
+        if (entrarMenu) {
+            entrarMenu.classList.add("-translate-y-full")
+            entrarMenu.style.visibility = 'hidden'
+            entrarMenu.style.pointerEvents = 'none'
+        }
+    }
+
+    // Função para fechar o modal Criar Conta
+    function closeCriarContaModal() {
+        criarContaMenu.classList.add("-translate-y-full")
+        body.classList.remove("overflow-hidden")
+        blackscreen.classList.remove("bg-black/60")
+        blackscreen.classList.remove("z-0")
+
+        // Mostrar header novamente
+        if (header) {
+            header.style.opacity = '1'
+            header.style.pointerEvents = 'auto'
+        }
+    }
 
     criarConta.addEventListener("click", function () {
-        criarContaMenu.classList.toggle("-translate-y-full")
-        body.classList.toggle("overflow-hidden")
-        blackscreen.classList.toggle("bg-black/60")
-        blackscreen.classList.toggle("z-0")
+        openCriarContaModal()
     })
 
     retornar.addEventListener("click", function () {
-        criarContaMenu.classList.toggle("-translate-y-full")
-        body.classList.toggle("overflow-hidden")
-        blackscreen.classList.toggle("bg-black/60")
-        blackscreen.classList.toggle("z-0")
+        closeCriarContaModal()
     })
 
-    mobileCriarContaBtn.addEventListener("click", function (){
+    mobileCriarContaBtn.addEventListener("click", function () {
         menuMobile.classList.toggle("translate-x-full")
-        criarContaMenu.classList.toggle("-translate-y-full")
         logo.classList.toggle("-translate-y-200")
         menuMobileLogo.classList.toggle("-translate-y-200")
+        openCriarContaModal()
     })
 
     visibility.addEventListener("click", function () {

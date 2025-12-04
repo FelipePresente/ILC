@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const spanishMobile = document.getElementById("spanishMobile")
 
     const item1 = document.getElementById("item1")
-    const item2 = document.getElementById("item2")
     const item3 = document.getElementById("item3")
     const item4 = document.getElementById("item4")
     const intercambios = document.getElementById("intercambios")
@@ -28,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const sobreNosDesc = document.getElementById("sobreNosDesc")
     const comIntercambiosTitle = document.getElementById("comIntercambiosTitle")
     const item1Text = document.getElementById("item1Text")
-    const item2Text = document.getElementById("item2Text")
     const item3Text = document.getElementById("item3Text")
     const respeitamosText = document.getElementById("respeitamosText")
     const descobraMundosTitle = document.getElementById("descobraMundosTitle")
@@ -47,6 +45,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const retornarBtn = document.getElementById("retornar")
     const carrosselSubtitle = document.getElementById("carrosselSubtitle")
 
+    // Modal Entrar
+    const entrarTitle = document.getElementById("entrarTitle")
+    const jaTemEntrar = document.getElementById("jaTemEntrar")
+    const linkCriarFromEntrarText = document.getElementById("linkCriarFromEntrarText")
+    const linkEntrarFromCriarText = document.getElementById("linkEntrarFromCriarText")
+    const entrarEmail = document.getElementById("entrarEmail")
+    const entrarPasswordInput = document.getElementById("entrarPasswordInput")
+    const entrarBtnText = document.getElementById("entrarBtnText")
+    const ouEntrarSpan = document.getElementById("ouEntrarSpan")
+    const retornarEntrar = document.getElementById("retornarEntrar")
+    const entrarCarrosselSubtitle = document.getElementById("entrarCarrosselSubtitle")
+
     // rodapé
     const footerCopyright = document.getElementById("footerCopyright")
 
@@ -58,6 +68,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const mobileCriarContaBtn = document.getElementById("mobileCriarContaBtn")
     const mobileUsuarioText = document.getElementById("mobileUsuarioText")
     const mobileEmailText = document.getElementById("mobileEmailText")
+
+    // Contato
+    const contactLinkHeader = document.getElementById("contactLinkHeader")
+    const contactTitle = document.getElementById("contactTitle")
+    const contactDesc = document.getElementById("contactDesc")
+    const contactEmailLabel = document.getElementById("contactEmailLabel")
+    const contactPhoneLabel = document.getElementById("contactPhoneLabel")
+    const contactAddressLabel = document.getElementById("contactAddressLabel")
+    const formNameInput = document.getElementById("formNameInput")
+    const formEmailInput = document.getElementById("formEmailInput")
+    const formMessageInput = document.getElementById("formMessageInput")
+    const formSendBtn = document.getElementById("formSendBtn")
 
     // cards (1..5) - Ida e Volta
     const card1Title = document.getElementById("card1Title")
@@ -115,9 +137,8 @@ document.addEventListener("DOMContentLoaded", function () {
         enMobile.classList.toggle("hidden")
 
         item1.textContent = "About us"
-        item2.textContent = "Schedules"
         intercambio.textContent = "Exchanges"
-        item4.textContent = "Contact"
+        if (contactLinkHeader) contactLinkHeader.textContent = "Contact"
         entrar.textContent = "Login"
         criarConta.textContent = "Sign up"
         landingPageP.textContent = "Exchange, Language and Culture"
@@ -126,13 +147,13 @@ document.addEventListener("DOMContentLoaded", function () {
         sobreNosDesc.textContent = "ILC - Exchange, Language and Culture is an agency dedicated to bringing knowledge, experiences and virtues to people around the world through cultural exchanges in Latin America."
         comIntercambiosTitle.textContent = "With our exchanges, you acquire:"
         item1Text.textContent = "international knowledge and experiences"
-        item2Text.textContent = "cultural exchanges"
         item3Text.textContent = "ancestral connection"
         respeitamosText.textContent = "We respect all identities and cultures. Our space is safe and welcoming for everyone."
         descobraMundosTitle.textContent = "Discover worlds with ILC"
         conectandoVoceDesc.textContent = "Connecting you to vibrant cultural communities through Exchange, Language and Culture."
         criarContaTitle.textContent = "Create an account"
-        jaTemConta.innerHTML = "Already have an account? <a href=\"\" class=\"text-gray-200 underline\">Login</a>"
+        jaTemConta.textContent = "Already have an account?"
+        if (linkEntrarFromCriarText) linkEntrarFromCriarText.textContent = 'Login'
         nomeInput.placeholder = "Name"
         sobrenomeInput.placeholder = "Last name"
         emailInput.placeholder = "Email"
@@ -142,6 +163,16 @@ document.addEventListener("DOMContentLoaded", function () {
         ouRegistreComSpan.textContent = "Or register with"
         if (retornarBtn) retornarBtn.textContent = 'Return to page'
         if (carrosselSubtitle) carrosselSubtitle.textContent = 'Exchange, Language and Culture'
+        if (entrarTitle) entrarTitle.textContent = 'Login'
+        if (jaTemEntrar) jaTemEntrar.textContent = "Don't have an account yet?"
+        if (linkCriarFromEntrarText) linkCriarFromEntrarText.textContent = 'Sign up'
+        if (linkEntrarFromCriarText) linkEntrarFromCriarText.textContent = 'Login'
+        if (entrarEmail) entrarEmail.placeholder = 'Email'
+        if (entrarPasswordInput) entrarPasswordInput.placeholder = 'Enter your password'
+        if (entrarBtnText) entrarBtnText.textContent = 'Login'
+        if (ouEntrarSpan) ouEntrarSpan.textContent = 'Or login with'
+        if (retornarEntrar) retornarEntrar.textContent = 'Return to page'
+        if (entrarCarrosselSubtitle) entrarCarrosselSubtitle.textContent = 'Exchange, Language and Culture'
         if (card1Title) card1Title.textContent = 'Quilombas | 15 days'
         if (card1Country) card1Country.textContent = 'Brazil'
         if (card1From) card1From.textContent = 'From:'
@@ -180,6 +211,15 @@ document.addEventListener("DOMContentLoaded", function () {
         if (mobileCriarContaBtn) mobileCriarContaBtn.textContent = 'Sign up'
         if (mobileUsuarioText) mobileUsuarioText.textContent = 'User without account'
         if (mobileEmailText) mobileEmailText.textContent = 'No email'
+        if (contactTitle) contactTitle.textContent = 'Contact us'
+        if (contactDesc) contactDesc.textContent = 'We are ready to help you plan your next cultural adventure.'
+        if (contactEmailLabel) contactEmailLabel.textContent = 'Email'
+        if (contactPhoneLabel) contactPhoneLabel.textContent = 'Phone'
+        if (contactAddressLabel) contactAddressLabel.textContent = 'Address'
+        if (formNameInput) formNameInput.placeholder = 'Your name'
+        if (formEmailInput) formEmailInput.placeholder = 'Your email'
+        if (formMessageInput) formMessageInput.placeholder = 'Your message'
+        if (formSendBtn) formSendBtn.textContent = 'Send message'
 
         localStorage.setItem('selectedLanguage', 'en');
     }
@@ -191,9 +231,8 @@ document.addEventListener("DOMContentLoaded", function () {
         spanishMobile.classList.toggle("hidden")
 
         item1.textContent = "Sobre nosotros"
-        item2.textContent = "Horarios"
         intercambio.textContent = "Intercambios"
-        item4.textContent = "Contacto"
+        if (contactLinkHeader) contactLinkHeader.textContent = "Contacto"
         entrar.textContent = "Entrar"
         criarConta.textContent = "Crear cuenta"
         landingPageP.textContent = "Intercambio, Lengua y Cultura"
@@ -202,13 +241,13 @@ document.addEventListener("DOMContentLoaded", function () {
         sobreNosDesc.textContent = "ILC - Intercambio, Lengua y Cultura es una agencia dedicada a llevar conocimiento, experiencias y virtudes a personas alrededor del mundo a través de intercambios culturales en América Latina."
         comIntercambiosTitle.textContent = "Con nuestros intercambios, adquieres:"
         item1Text.textContent = "conocimientos y experiencias internacionales"
-        item2Text.textContent = "intercambios culturales"
         item3Text.textContent = "conexión ancestral"
         respeitamosText.textContent = "Respetamos todas las identidades y culturas. Nuestro espacio es seguro y acogedor para todos."
         descobraMundosTitle.textContent = "Descubre mundos con ILC"
         conectandoVoceDesc.textContent = "Conectándote con comunidades culturales vibrantes a través de Intercambio, Lengua y Cultura."
         criarContaTitle.textContent = "Crear una cuenta"
-        jaTemConta.innerHTML = "¿Ya tienes una cuenta? <a href=\"\" class=\"text-gray-200 underline\">Entrar</a>"
+        jaTemConta.textContent = "¿Ya tienes una cuenta?"
+        if (linkEntrarFromCriarText) linkEntrarFromCriarText.textContent = 'Entrar'
         nomeInput.placeholder = "Nombre"
         sobrenomeInput.placeholder = "Apellido"
         emailInput.placeholder = "Correo electrónico"
@@ -218,6 +257,16 @@ document.addEventListener("DOMContentLoaded", function () {
         ouRegistreComSpan.textContent = "O regístrate con"
         if (retornarBtn) retornarBtn.textContent = 'Volver a la página'
         if (carrosselSubtitle) carrosselSubtitle.textContent = 'Intercambio, Lengua y Cultura'
+        if (entrarTitle) entrarTitle.textContent = 'Entrar'
+        if (jaTemEntrar) jaTemEntrar.textContent = "¿Aún no tienes cuenta?"
+        if (linkCriarFromEntrarText) linkCriarFromEntrarText.textContent = 'Crear cuenta'
+        if (linkEntrarFromCriarText) linkEntrarFromCriarText.textContent = 'Entrar'
+        if (entrarEmail) entrarEmail.placeholder = 'Correo electrónico'
+        if (entrarPasswordInput) entrarPasswordInput.placeholder = 'Ingresa tu contraseña'
+        if (entrarBtnText) entrarBtnText.textContent = 'Entrar'
+        if (ouEntrarSpan) ouEntrarSpan.textContent = 'O entrar con'
+        if (retornarEntrar) retornarEntrar.textContent = 'Volver a la página'
+        if (entrarCarrosselSubtitle) entrarCarrosselSubtitle.textContent = 'Intercambio, Lengua y Cultura'
         if (card1Title) card1Title.textContent = 'Quilombas | 15 días'
         if (card1Country) card1Country.textContent = 'Brasil'
         if (card1From) card1From.textContent = 'A partir de:'
@@ -256,6 +305,15 @@ document.addEventListener("DOMContentLoaded", function () {
         if (mobileCriarContaBtn) mobileCriarContaBtn.textContent = 'Crear cuenta'
         if (mobileUsuarioText) mobileUsuarioText.textContent = 'Usuario sin cuenta'
         if (mobileEmailText) mobileEmailText.textContent = 'Sin correo'
+        if (contactTitle) contactTitle.textContent = 'Ponte en contacto'
+        if (contactDesc) contactDesc.textContent = 'Estamos listos para ayudarte a planificar tu próxima aventura cultural.'
+        if (contactEmailLabel) contactEmailLabel.textContent = 'Correo electrónico'
+        if (contactPhoneLabel) contactPhoneLabel.textContent = 'Teléfono'
+        if (contactAddressLabel) contactAddressLabel.textContent = 'Dirección'
+        if (formNameInput) formNameInput.placeholder = 'Tu nombre'
+        if (formEmailInput) formEmailInput.placeholder = 'Tu correo electrónico'
+        if (formMessageInput) formMessageInput.placeholder = 'Tu mensaje'
+        if (formSendBtn) formSendBtn.textContent = 'Enviar mensaje'
 
         localStorage.setItem('selectedLanguage', 'es');
     }
@@ -267,9 +325,8 @@ document.addEventListener("DOMContentLoaded", function () {
         brMobile.classList.toggle("hidden")
 
         item1.textContent = "Sobre nós"
-        item2.textContent = "Cronogramas"
         intercambio.textContent = "Intercâmbios"
-        item4.textContent = "Contato"
+        if (contactLinkHeader) contactLinkHeader.textContent = "Contato"
         entrar.textContent = "Entrar"
         criarConta.textContent = "Criar conta"
         landingPageP.textContent = "Intercâmbio, Linguagem e Cultura"
@@ -278,13 +335,13 @@ document.addEventListener("DOMContentLoaded", function () {
         sobreNosDesc.textContent = "ILC - Intercâmbio, Linguagem e Cultura é uma agência com o objetivo de levar conhecimento, experiências e virtudes para pessoas ao redor do mundo por meio de intercâmbios culturais na América Latina."
         comIntercambiosTitle.textContent = "Com nossos intercâmbios, você adquire:"
         item1Text.textContent = "conhecimento e experiências internacionais"
-        item2Text.textContent = "trocas culturais"
         item3Text.textContent = "conexão ancestral"
         respeitamosText.textContent = "Respeitamos todas as identidades e culturas. Nosso espaço é seguro e acolhedor para todas as pessoas."
         descobraMundosTitle.textContent = "Descubra mundos com ILC"
         conectandoVoceDesc.textContent = "Conectando você a comunidades culturais vibrantes através de Intercâmbio, Linguagem e Cultura."
         criarContaTitle.textContent = "Criar uma conta"
-        jaTemConta.innerHTML = "Já possui uma conta? <a href=\"\" class=\"text-gray-200 underline\">Entrar</a>"
+        jaTemConta.textContent = "Já possui uma conta?"
+        if (linkEntrarFromCriarText) linkEntrarFromCriarText.textContent = 'Entrar'
         nomeInput.placeholder = "Nome"
         sobrenomeInput.placeholder = "Sobrenome"
         emailInput.placeholder = "E-mail"
@@ -294,6 +351,16 @@ document.addEventListener("DOMContentLoaded", function () {
         ouRegistreComSpan.textContent = "Ou registre-se com"
         if (retornarBtn) retornarBtn.textContent = 'Retornar à página'
         if (carrosselSubtitle) carrosselSubtitle.textContent = 'Intercâmbio, Linguagem e Cultura'
+        if (entrarTitle) entrarTitle.textContent = 'Entrar'
+        if (jaTemEntrar) jaTemEntrar.textContent = "Ainda não possui conta?"
+        if (linkCriarFromEntrarText) linkCriarFromEntrarText.textContent = 'Criar conta'
+        if (linkEntrarFromCriarText) linkEntrarFromCriarText.textContent = 'Entrar'
+        if (entrarEmail) entrarEmail.placeholder = 'E-mail'
+        if (entrarPasswordInput) entrarPasswordInput.placeholder = 'Digite sua senha'
+        if (entrarBtnText) entrarBtnText.textContent = 'Entrar'
+        if (ouEntrarSpan) ouEntrarSpan.textContent = 'Ou entrar com'
+        if (retornarEntrar) retornarEntrar.textContent = 'Retornar à página'
+        if (entrarCarrosselSubtitle) entrarCarrosselSubtitle.textContent = 'Intercâmbio, Linguagem e Cultura'
         if (card1Title) card1Title.textContent = 'Quilombas | 15 dias'
         if (card1Country) card1Country.textContent = 'Brasil'
         if (card1From) card1From.textContent = 'A partir de:'
@@ -332,6 +399,15 @@ document.addEventListener("DOMContentLoaded", function () {
         if (mobileCriarContaBtn) mobileCriarContaBtn.textContent = 'Criar conta'
         if (mobileUsuarioText) mobileUsuarioText.textContent = 'Usuário sem conta'
         if (mobileEmailText) mobileEmailText.textContent = 'Sem e-mail'
+        if (contactTitle) contactTitle.textContent = 'Entre em contato'
+        if (contactDesc) contactDesc.textContent = 'Estamos prontos para ajudar você a planejar sua próxima aventura cultural.'
+        if (contactEmailLabel) contactEmailLabel.textContent = 'E-mail'
+        if (contactPhoneLabel) contactPhoneLabel.textContent = 'Telefone'
+        if (contactAddressLabel) contactAddressLabel.textContent = 'Endereço'
+        if (formNameInput) formNameInput.placeholder = 'Seu nome'
+        if (formEmailInput) formEmailInput.placeholder = 'Seu e-mail'
+        if (formMessageInput) formMessageInput.placeholder = 'Sua mensagem'
+        if (formSendBtn) formSendBtn.textContent = 'Enviar mensagem'
 
         localStorage.setItem('selectedLanguage', 'pt');
     }
